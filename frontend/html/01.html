@@ -30,66 +30,109 @@
 </style>
 <body>
     <h1 class="title-1">欢迎学习 HTML</h1>
-    <h1>欢迎学习 HTML</h1>
-    <h1>欢迎学习 HTML</h1>
+    <h2>欢迎学习 HTML</h2>
+    <h3>欢迎学习 HTML</h3>
+    <br>
+    <p style="color: red;">001元素.h1是标题</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+
     <form action="" method="post">
         <label for="username">用户名：</label>
-        <input type="text" name="username" id="username" value="输入用户名" data-coustom="form-cn"><br>
-        <label for="password">密码：</label>
-        <input type="text" name="disabled" id="disabled" value="" placeholder="用来演示被禁用的 input" disabled><br>
-        <input type="text" name="password" id="password" value="输入密码" data-coustom="form-cn"><br>
-        <label for="email">邮箱：</label>
-        <input type="email" name="email" id="email" value="输入邮箱"><br>
-        <input type="submit" value="登录">
-        <button type="button">sign up</button>
-        <button type="button">重置</button>
-
-        <hr style="width: 600px;margin-left: 0;">
-        <label for="city">请选择你的城市：</label>
+        <input type="text" name="username" id="username" value="输入用户名" data-coustom="form-cn">
         <br>
+        
+        <label for="password">密码：</label>
+        <input type="text" name="password" id="password" value="输入密码" data-coustom="form-cn">
+        <input type="text" name="disabled" id="disabled" value="" placeholder="用来演示被禁用的 input" disabled>
+        <br>
+        
+        <label for="email">邮箱：</label>
+        <input type="email" name="email" id="email" value="输入邮箱">
+        <br>
+
+        <!-- 这个是输入了信息之后登入按钮 -->
+        <input type="submit" value="登录">
+        <!-- 单纯的按钮 -->
+        <button type="button">重置</button>
+        <p style="color: red;">002元素.账号登录框架</p>
+        <hr style="width: 600px;margin-left: 0;">
+        <br>
+
+        <label for="city">请选择你的城市：</label>
+        <br><br>
 
         <!-- 单选框架 -->
         <label for="gender-male">性别：</label>
         <input type="radio" name="gender" id="gender-male" value="male">男
         <label for="gender-female"></label>
         <input type="radio" name="gender" id="gender-female" value="female">女
-        <label></label>
+        <p style="color: red;">003元素.单选选择按钮框架</p>
+        <hr style="width: 600px;margin-left: 0;">
         <br>
 
         <!-- 多选框架 -->
+        <label for="city">请选择你的爱好：</label>
+        <br><br>
+
         <span>爱好：</span>
         <label for=""><input type="checkbox" name="hobby" value="it">it</label>
         <label for=""><input type="checkbox" name="hobby" value="car">汽车</label>
         <label for=""><input type="checkbox" name="hobby" value="sport">运动</label>
         <label for=""><input type="checkbox" name="hobby" value="misic">音乐</label>
+        <p style="color: red;">004元素.多选选择按钮框架</p>
+        <hr style="width: 600px;margin-left: 0;">
         <br>
-
 
         <select name="city" id="city">
             <option value="chengdu">成都</option>
             <option value="tokyo">东京</option> 
             <option value="nanjing">南京</option>
+            <option value="shanghai">上海</option>
+            <option value="guangzhou">广州</option>
+            <option value="shenzhen">深圳</option>
+            <option value="daban">大阪</option>
         </select>
+        <p style="color: red;">005元素.下拉选择框框架</p>
         <br>
-        <label for="content">个人简介：</label>
-        <textarea name="content" id="content" cols="50" rows="5" placeholder="请输入你的个人简介"></textarea>
+        <hr style="width: 600px;margin-left: 0;">
+        <br><br>
 
+        <label for="content">个人简介：</label>
+        <br>
+
+        <textarea name="content" id="content" cols="50" rows="5" placeholder="请输入你的个人简介"></textarea>
+        <p style="color: red;">006元素.文本域框架</p>
+        <hr style="width: 600px;margin-left: 0;">
+        <br>
     </form>
+    
     <button type="button">点击领取礼包</button>
-    <p>这是一个段落。
-        <em>斜的字体</em>
-        <del>这段文字中间会有一条横线</del>
-        <strong>
-            utf-8 编码
-        </strong>
-        <!--列表标签-->
+    <p style="color: red;">007元素.按钮框架</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+
+    <!-- 文本的一些知识 -->
+    <p>这是一个段落。</p>
+    <em>斜的字体</em>
+    <br><br>
+
+    <del>这段文字中间会有一条横线</del>
+    <br><br>
+    <strong>utf-8 编码 这是文案加粗</strong>
+    <p style="color: red;">008元素.文本的一些效果用法</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+
+    <p style="color: pink;">🌟列表的效果用法</p>
         <ol>
             <li>苹果</li>
             <li>香蕉</li>
             <li>梨子</li>
             <li>芒果</li>
         </ol>
-        <hr style="width: 600px;margin-left: 0;">
+        <p style="color: red;">009元素.有序列表</p>
+        <hr style="width: 100px;margin-left: 0;">
         <!-- 无序列表 -->
         <ul>
             <li>苹果</li>
@@ -97,6 +140,9 @@
             <li>梨子</li>
             <li>芒果</li>
         </ul>
+        <p style="color: red;">010元素.有无列表</p>
+        <hr style="width: 100px;margin-left: 0;">
+        <br>
         <!-- 嵌套列表 -->
         <ol>
             <li>水果
@@ -121,18 +167,26 @@
                 </ul>
             </li>
         </ol>
+        <p style="color: red;">011元素.嵌套列表</p>
+        <hr style="width: 100px;margin-left: 0;">
         <br>
         <!-- 超链接和图片标签 -->
-        <a href="https://google.com">谷歌</a><br>
+        <a href="https://google.com">谷歌</a>
+        <p style="color: red;">012元素.超链接</p>
+        <hr style="width: 600px;margin-left: 0;">
+        <br><br>
+
         <!-- 相对路径 -->
         <!-- ./ 表示当天目录 -->
         <!-- ../表示上一级目录 -->
-         <!-- 相对路径  alt是图片加载失败的时候都文字描述 title是把鼠标停在图片上的时候会显示文字ß-->
+        <!-- 相对路径  alt是图片加载失败的时候都文字描述 title是把鼠标停在图片上的时候会显示文字ß-->
         <img src="./0001.jpg" alt="描述文字" title="是一个截图"><br>
         <!-- 绝对路径 -->
         <img src="/Users/bou_harumi/Desktop/0001.jpg" alt="">
+        <p style="color: red;">013元素.图片和路径类型</p>
         <hr style="width: 600px;margin-left: 0;">
-    </p>
+        <br><br>
+
     <!-- 表格标签 -->
     <table style="border: 1px solid #000;">
         <thead>
@@ -160,5 +214,10 @@
             </tr>
         </tbody>
     </table>
+    <br>
+
+    <p style="color: red;">014元素.表格标签</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br><br>
 </body>
 </html>
