@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 学习</title>
+</head> 
+<style>
+    table {
+        width: 500px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-left: 0;
+    }
+    th {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+    }
+    tr {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    td {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+<body>
+    <h1 class="title-1">欢迎学习 HTML</h1>
+    <h1>欢迎学习 HTML</h1>
+    <h1>欢迎学习 HTML</h1>
+    <form action="" method="post">
+        <label for="username">用户名：</label>
+        <input type="text" name="username" id="username" value="输入用户名" data-coustom="form-cn"><br>
+        <label for="password">密码：</label>
+        <input type="text" name="disabled" id="disabled" value="" placeholder="用来演示被禁用的 input" disabled><br>
+        <input type="text" name="password" id="password" value="输入密码" data-coustom="form-cn"><br>
+        <label for="email">邮箱：</label>
+        <input type="email" name="email" id="email" value="输入邮箱"><br>
+        <input type="submit" value="登录">
+        <button type="button">sign up</button>
+        <button type="button">重置</button>
+
+        <hr style="width: 600px;margin-left: 0;">
+        <label for="city">请选择你的城市：</label>
+        <br>
+
+        <!-- 单选框架 -->
+        <label for="gender-male">性别：</label>
+        <input type="radio" name="gender" id="gender-male" value="male">男
+        <label for="gender-female"></label>
+        <input type="radio" name="gender" id="gender-female" value="female">女
+        <label></label>
+        <br>
+
+        <!-- 多选框架 -->
+        <span>爱好：</span>
+        <label for=""><input type="checkbox" name="hobby" value="it">it</label>
+        <label for=""><input type="checkbox" name="hobby" value="car">汽车</label>
+        <label for=""><input type="checkbox" name="hobby" value="sport">运动</label>
+        <label for=""><input type="checkbox" name="hobby" value="misic">音乐</label>
+        <br>
+
+
+        <select name="city" id="city">
+            <option value="chengdu">成都</option>
+            <option value="tokyo">东京</option> 
+            <option value="nanjing">南京</option>
+        </select>
+        <br>
+        <label for="content">个人简介：</label>
+        <textarea name="content" id="content" cols="50" rows="5" placeholder="请输入你的个人简介"></textarea>
+
+    </form>
+    <button type="button">点击领取礼包</button>
+    <p>这是一个段落。
+        <em>斜的字体</em>
+        <del>这段文字中间会有一条横线</del>
+        <strong>
+            utf-8 编码
+        </strong>
+        <!--列表标签-->
+        <ol>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>梨子</li>
+            <li>芒果</li>
+        </ol>
+        <hr style="width: 600px;margin-left: 0;">
+        <!-- 无序列表 -->
+        <ul>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>梨子</li>
+            <li>芒果</li>
+        </ul>
+        <!-- 嵌套列表 -->
+        <ol>
+            <li>水果
+                <ul>
+                    <li>苹果</li>
+                    <li>香蕉</li>
+                    <li>菠萝</li>
+                </ul>
+            </li>
+            <li>手机
+                <ul>
+                    <li>华为</li>
+                    <li>小米</li>
+                    <li>苹果</li>
+                </ul>
+            </li>
+            <li>车
+                <ul>
+                    <li>奔驰</li>
+                    <li>宝马</li>
+                    <li>奥迪</li>
+                </ul>
+            </li>
+        </ol>
+        <br>
+        <!-- 超链接和图片标签 -->
+        <a href="https://google.com">谷歌</a><br>
+        <!-- 相对路径 -->
+        <!-- ./ 表示当天目录 -->
+        <!-- ../表示上一级目录 -->
+         <!-- 相对路径  alt是图片加载失败的时候都文字描述 title是把鼠标停在图片上的时候会显示文字ß-->
+        <img src="./0001.jpg" alt="描述文字" title="是一个截图"><br>
+        <!-- 绝对路径 -->
+        <img src="/Users/bou_harumi/Desktop/0001.jpg" alt="">
+        <hr style="width: 600px;margin-left: 0;">
+    </p>
+    <!-- 表格标签 -->
+    <table style="border: 1px solid #000;">
+        <thead>
+            <tr>
+                <th>前端</th>
+                <th>后端</th>
+                <th>操作系统</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>PHP</td>
+                <td>Linux</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Python</td>
+                <td>macOS</td>
+            </tr>
+            <tr>
+                <td>js</td>
+                <td>Ruby</td>
+                <td>Windo</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
