@@ -11,24 +11,57 @@
     <audio src="audio.mp3" controls autoplay loop>
         您的浏览器不支持音频播放
     </audio>
-
+    <p style="color: red;">001元素.音频基础框架</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+    
     <!-- 视频标签 -->
     <!-- 元素跟音频一样，可以设置长宽 -->
-    <video src="video.mp4" controls autoplay loop width="900px" height="600px">
+    <video src="video.mp4" controls autoplay loop width="600px" height="400px">
         您的浏览器不支持视频播放
     </video>
+    <p style="color: red;">002元素.视频基础框架</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
 
-<!-- html 布局标签 -->
-<!-- 块元素和行内元素   -->
-<!-- 块元素：独占一行，可以设置宽高，可以设置内外边距 -->
- <!-- 常见块元素：div，h1,p,ul,li,ol,table,form等。 -->
-<!-- 行内元素：不独占一行，不可以设置宽高，不可以设置内外边距 -->
-<!-- 块元素：div、h1、h2、h3、h4、h5、h6、p、ul、ol、li、table、form -->
-<!-- 行内元素：span、a、img、input、label、select、option、button -->
-
+    <!-- html 布局标签 -->
+    <!-- 块元素和行内元素   -->
+    <!-- 块元素：独占一行，可以设置宽高，可以设置内外边距 -->
+    <!-- 常见块元素：div，h1,p,ul,li,ol,table,form等。 -->
+    <!-- 行内元素：不独占一行，不可以设置宽高，不可以设置内外边距 -->
+    <!-- 常见行内元素：span、a、img、input、label、select、option、button -->
     <div>
-        <div style="width: 100px; height: 100px; background-color: red;"></div>
+        <!-- 这是块元素练习 -->
+        <div style="width: 400px; height: 400px; background-color: red;">块级元素1</div>
+        <div style="width: 400px; height: 400px; background-color: blue;">块级元素2</div>
+        <br>
+
+        <!-- 这是行内元素练习 -->
+        <span style="width: 300px; height: 300px; background-color: pink;">span 行内元素</span>
+        <strong style="width: 300px; height: 300px; background-color: aqua;">sreong 行内元素</strong>
     </div>
+    <p style="color: red;">003元素.块元素和行内元素</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+    
+    <!-- 语义化标签 意思就是元素用单词来表达 -->
+    <!-- 自定义头部内容：header -->
+    <header style="width: auto; height: 100px; background-color: pink; padding: 10px;">
+        <h1>我的网站</h1>
+        <!-- 定义导航链接 -->
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">关于</a>
+        </nav>
+    </header>
+    <br>
+    
+    <section>
+        <footer style="width: 400px; height: 200px; background-color: red; padding: 10px;">
+            <p>版权所有@2025</p>
+        </footer>
+    </section>
+
 
 
 
