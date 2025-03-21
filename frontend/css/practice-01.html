@@ -42,24 +42,46 @@
     <hr style="width: 600px;margin-left: 0;">
     <br>
 
-    <!-- id选择器优先级比类选择器高 -->
-    <div id="content"></div>
+    <!-- id选择器 和 类选择器 的基础代码展示 -->
+    <div id="content">这个是id块元素</div>
     <div class="box box1">这是一个盒子1 </div>
+    <p style="color: red;">016元素.id选择器和类选择器</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
 
+    <!-- id选择器优先级比类选择器高 div里面同时有 id选择器 和 类选择器 的时候 选择器们在CSS上设置的样式里优先显示id选择器的-->
     <!-- 在工作设置样式的时候一般用类选择器和标签选择器，id选择器一般用来做js中的比较多 -->
-    <div id="box3" class="box3">这里展示id选择器与类选择器同时作用于这里 </div>
+    <div id="box3" class="box3">
+        <p>这里展示了在CSS设置样式中优先显示id选择器的</p>
+    </div>
+    <p style="color: red;">017元素.id选择器和类选择器优先级展示</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
 
+    <!-- 相邻兄弟选择器 -->
     <div class="box5 border-selector">box5</div>
     <div class="box6 border-selector">box6</div>
-    <div class="box7 border-selector">box7</div>
-    <hr>
+    <p style="color: red;">018元素.相邻兄弟选择器基础代码</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
 
+    <!-- 组合选择器 -->
+    <div class="box7 border-selector">box7</div>
+    <div class="box8 border-selector">box8</div>
+    <div class="box9 border-selector">box9</div>
+    <div class="box10 border-selector">box10</div>
+    <p style="color: red;">019元素.组合选择器基础代码</p>
+    <hr style="width: 600px;margin-left: 0;">
+    <br>
+
+
+    <!-- 属性选择器 -->
     <form action="">
         <value>
-            <input type="text" value="type=text">
+            <input type="text" value="输入文本框">
         </value>
         <value>
-            <input type="password" value="type=password">
+            <input type="password" value="输入密码框">
         </value>
         <value>
             <input type="button" value="type=button">

@@ -6,25 +6,27 @@ p{
     text-align: left;
 }
 
+/* 头部标签样式基础代码 */
+.header h1{
+    color: blue;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+/* 身体标签样式基础代码 */
 body{
     margin-left:20px ;
 }
 
-.border-selector{
-    background-color: hotpink;
-    width: 300px;
-    margin-left: 10px;
-    border: 1px solid black;
+/* 后代选择器-某块元素内制定的所有元素 */
+.box4-p{
+    font-size: 15px;
+    margin-left: 30px;
 }
 
-/* 类选择器 */
-.box{
-    background-color: pink;
-    width: 300px;
-    height: 100px;
-}
-
-.box1{
+.header > p{
+    color: green;
+    font-size: 20px;
     margin-left: 30px;
 }
 
@@ -36,7 +38,19 @@ body{
     margin-left: 30px;
 }
 
+/* 类选择器 可以用两个名字分开设置样式，如下*/
+.box{
+    background-color: pink;
+    width: 300px;
+    height: 100px;
+}
+
+.box1{
+    margin-left: 30px;
+}
+
 /* id选择器与类选择器优先级展示 */
+/* 在工作设置样式的时候一般用类选择器和标签选择器，id选择器一般用来做js中的比较多 */
 .box3{
     background-color: green;
     width: 300px;
@@ -44,8 +58,6 @@ body{
     margin-left: 30px;
 }
 
-
-/* 在工作设置样式的时候一般用类选择器和标签选择器，id选择器一般用来做js中的比较多 */
 #box3{
     background-color: brown;
     width: 300px;
@@ -53,27 +65,30 @@ body{
     margin-left: 30px;
 }
 
-.header h1{
-    color: blue;
-    font-size: 30px;
-    margin-left: 30px;
+.box3 > p{
+    display: flex;
+    color: wheat;
+    font-size: 15px;
 }
 
-/* 后代选择器 */
-.header > p{
-    color: green;
-    font-size: 20px;
-    margin-left: 30px;
-}
 
-/* 相邻兄弟选择器 */
-.box1 + .box3{
-    margin-left: 10px;
-}
-
-.box5 ~ .box{
+/* 组合选择器 */
+.border-selector{
     background-color: hotpink;
+    width: 300px;
     margin-left: 10px;
+    border: 1px solid black;
+}
+
+/* 相邻兄弟选择器 这样设置样式时只会变化前者的下一个box 前者是不会变化的 */
+.box5 + .box6{
+    margin-left: 100px;
+}
+
+/* 组合选择器 这样设置样式时只会变化前者的最后一个box 前者们是不会变化的 与相邻兄弟选择器相同逻辑 */
+.box7 ~ .box10{   
+    background-color: hotpink;
+    margin-left: 100px;
 }
 
 /* 属性选择器 */
