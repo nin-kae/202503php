@@ -5,3 +5,125 @@ p{
     font-weight: bold;
     text-align: left;
 }
+
+body{
+    margin-left:20px ;
+}
+
+.border-selector{
+    background-color: hotpink;
+    width: 300px;
+    margin-left: 10px;
+    border: 1px solid black;
+}
+
+/* 类选择器 */
+.box{
+    background-color: pink;
+    width: 300px;
+    height: 100px;
+}
+
+.box1{
+    margin-left: 30px;
+}
+
+/* ID选择器 */
+#content{
+    background-color: yellow;
+    width: 200px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+/* id选择器与类选择器优先级展示 */
+.box3{
+    background-color: green;
+    width: 300px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+
+/* 在工作设置样式的时候一般用类选择器和标签选择器，id选择器一般用来做js中的比较多 */
+#box3{
+    background-color: brown;
+    width: 300px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+.header h1{
+    color: blue;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+/* 后代选择器 */
+.header > p{
+    color: green;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+/* 相邻兄弟选择器 */
+.box1 + .box3{
+    margin-left: 10px;
+}
+
+.box5 ~ .box{
+    background-color: hotpink;
+    margin-left: 10px;
+}
+
+/* 属性选择器 */
+input[type="text"]{
+    border: 1px solid red;
+}
+
+input[type="email"]{
+    border: 1px solid blue;
+}
+
+[title]{
+    background-color: pink;
+}
+
+input{
+    width: 500px;
+    height: 80px;
+}
+
+[data-custom="999"]{
+    background-color: yellow;
+}
+
+/* 伪类选择器 */
+
+/* 未访问过链接的状态  */
+.google-link:link{
+    color: pink;
+}
+
+/* 已访问过链接的状态 */
+.google-link:visited{
+    color: green;
+}
+
+/* 鼠标悬停的状态 */
+.google-link:hover{
+    color: red;
+}
+
+/* 鼠标点击的状态 */
+.google-link:active{
+    color: blue;
+}
+
+input:focus{
+    background-color: pink;
+}  
+
+input:hover{
+    background-color: yellow;
+}

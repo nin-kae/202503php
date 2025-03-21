@@ -26,16 +26,55 @@
 <!-- 谨慎使用：！important，会导致样式不可维护 -->
 
 <body>
-    <div>
-        <div>
+    <div class="header">
             <h1>学习CSS</h1>
             <p>
                 这里是用来练习引入的CSS文件的效果
             </p>
+    
+    
+            <div class="box4">
+        <div class="box4-p">这里是这个box4里面的p标签
         </div>
     </div>
-    <div>  
+
+    <!-- id选择器优先级比类选择器高 -->
+    <div id="content"></div>
+    <div class="box box1">这是一个盒子1 </div>
+
+    <!-- 在工作设置样式的时候一般用类选择器和标签选择器，id选择器一般用来做js中的比较多 -->
+    <div id="box3" class="box3">这里展示id选择器与类选择器同时作用于这里 </div>
+
+    <div class="box5 border-selector">box5</div>
+    <div class="box6 border-selector">box6</div>
+    <div class="box7 border-selector">box7</div>
+    <hr>
+
+    <form action="">
+        <value>
+            <input type="text" value="type=text">
+        </value>
+        <value>
+            <input type="password" value="type=password">
+        </value>
+        <value>
+            <input type="button" value="type=button">
+        </value>
+        <value>
+            <input type="email" value="type=email">
+        </value>
+        <value>
+            <input type="text" data-custom="999" value="data-custom=999">
+        </value>
+        <value>
+            <input type="text" data-custom="1000" value="data-custom=1000">
+        </value>
+    </form>
+
+    <a href="https://google.com" class="google-link">点击这个就会到google的网站</a>
     
-    </div>
+    <label for=""><input type="text" value="测试伪类 input的标签"></label>
+
+
 </body>
 </html>
