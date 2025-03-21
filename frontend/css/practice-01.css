@@ -92,21 +92,36 @@ body{
 }
 
 /* 属性选择器 */
-input[type="text"]{
-    border: 1px solid red;
+input[type="text1"]{
+    border: 5px solid red;
+}
+
+input[type="password"]{
+    border: 5px solid yellow;
 }
 
 input[type="email"]{
-    border: 1px solid blue;
+    border: 5px solid blue;
 }
 
+/* 存在属性设置样式结构 */
 [title]{
-    background-color: pink;
+    border: 5px solid burlywood;
+    width: 300px;
 }
 
+/* 在列表里的伪类选择器的使用方法 */
 input{
     width: 500px;
     height: 80px;
+}
+
+input:focus{
+    background-color: pink;
+}  
+
+input:hover{
+    background-color: yellow;
 }
 
 [data-custom="999"]{
@@ -114,7 +129,7 @@ input{
 }
 
 /* 伪类选择器 */
-
+/* 超链接伪类选择器的使用方法 */
 /* 未访问过链接的状态  */
 .google-link:link{
     color: pink;
@@ -135,10 +150,3 @@ input{
     color: blue;
 }
 
-input:focus{
-    background-color: pink;
-}  
-
-input:hover{
-    background-color: yellow;
-}
