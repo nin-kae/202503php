@@ -35,7 +35,7 @@ let age;//undefined
 console.log(age);
 
 // Object:对象类型
-let ={
+let userInfo={
     username:'Nin Kae',
     age:18,
     address:'东京'
@@ -137,7 +137,7 @@ console.log(price);
 //3. switch...case
 //switch(变量){case 值1:代码块;break;case 值2:代码块;break;default:代码块}
 //我们一般会在情况有限且明确的情况下使用switch...case
-let day = 2;
+let day = 3;
 switch(day){
     case 1:
         console.log('星期一');
