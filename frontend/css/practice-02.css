@@ -207,7 +207,7 @@ a{
     background-color: #FFA07A;
 }
 
-@keyframes move{
+@keyframes move {
     0%{
         transform: translateX(0);
     }
@@ -228,5 +228,24 @@ a{
         transform: translateX(500px);
     }
 }
+
+.footer-inner-bottom-btn2{
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    background-color: #FFFFE0;
+
+    animation: move 5s infinite;/*设置动画，第一个参数是动画名称，第二个参数是时间，第三个参数是次数*/
+}
+
+
+
+
+
+
 
 
