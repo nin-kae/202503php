@@ -242,10 +242,46 @@ a{
     animation: move 5s infinite;/*设置动画，第一个参数是动画名称，第二个参数是时间，第三个参数是次数*/
 }
 
+/*这里设置媒体在不同尺寸显示什么东西*/
+@media (max-width:1500px){
+    .right{
+        display: none;/*设置不显示*/
+    }
 
+    .left{
+        width: 100%;/*设置宽度*/
+    }
+}
 
+@media(min-width:800px) and (max-width:1500px){
+    .left{
+        background-color: lightblue;
+    }
+}
 
+.footer-inner-left > p::before{
+    content: '🌕';/*设置内容*/
+}
 
+.footer-inner-left > p::after{
+    content: '🌞';/*设置内容*/
+}
 
+/*：：first-letter 和 ：：first-line 是伪元素*/
+/*：：first-letter 用于向文本的第一个字母设置特殊样式*/
+/*：：first-line 用于向文本的第一行设置特殊样式*/
 
+.footer-inner-left > p::first-letter {
+    font-size: 50px;/*设置字体大小*/
+    color: #FFA500;
+}
 
+.font-custom-1::first-line{
+    font-size: 30px;
+    color: #FFFF00;
+}
+
+img{
+    max-width: 100%;/*设置最大宽度*/
+    height: auto;/*设置高度自适应*/
+}
