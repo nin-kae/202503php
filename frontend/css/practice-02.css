@@ -25,6 +25,10 @@ body{
     width: auto;
     background-color: #FFF0F5;
     align-self: center;
+    display: flex;
+    position: sticky;
+    top: 0%;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .left{
@@ -98,6 +102,70 @@ body{
     background-color: #FFF0F5;
 }
 
+.home{
+    flex: 1;/*设置弹性盒子比例*/
+    text-align: center;
+    margin-top: 1px;
+    color: 	#483D8B;
+}
+
+.link{
+    flex: 6;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.account{
+    flex: 3;
+    text-align: center;
+    margin-top: 1px;
+}
+
+a{
+    text-decoration-line: none;/*设置无下划线*/
+}
+
+.footer-inner-left{
+    width: 200px;
+    height: 200px;
+    background-color: #FFA07A;
+    text-align: center;
+    border-radius: 20px;
+
+    position: relative;/*设置相对定位*/
+    top: 10px;
+    left: 10px;
+}
+
+.footer-inner-left > p{
+    margin: 10px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;/*设置弹性盒子*/
+    justify-content: center;/*水平居中*/
+    align-items: center;/*垂直居中*/
+    height: 200px;
+    color: #F8F8FF;
+}
+
+.footer-inner-right{
+    width: 200px;
+    height: 200px;
+    background-color: #FFA07A;
+    text-align: center;
+
+    position: absolute;/*设置绝对定位*/
+    top: 1000px;
+    left: 500px;
+}
+
+.footer-inner-right > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: 	#FFA500;
+
+}
 
 
 
