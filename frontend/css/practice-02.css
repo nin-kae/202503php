@@ -170,9 +170,63 @@ a{
 .footer-inner-contact{
     text-align: center;
     width: 100px;
-    height: 20px;
-    background-color: #7FFFAA;
+    height: 100px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;/*设置固定定位，相对于浏览器窗口*/
+    bottom: 50px;
+    right: 10px;
 }
 
+.footer-inner-contact a{
+    margin-left: 65px;
+    text-decoration-line:none ;/*设置下划线*/
+}
+
+.footer-inner-bottom{
+    margin-top: 100px;
+}
+
+.footer-inner-bottom-btn1{
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+
+    background-color: #FFFFE0;
+    transition: background-color 2s ease;/*设置过渡效果，第一个参数是属性，第二个参数是时间，第三个参数是速度曲线*/
+}
+
+.footer-inner-bottom-btn1:hover{
+    background-color: #FFA07A;
+}
+
+@keyframes move{
+    0%{
+        transform: translateX(0);
+    }
+
+    25%{
+        transform: translateX(100px);
+    }
+
+    50%{
+        transform: translateY(50px);
+    }
+
+    75%{
+        transform: translateY(-50px);
+    }
+
+    100%{
+        transform: translateX(500px);
+    }
+}
 
 
