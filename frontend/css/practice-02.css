@@ -51,6 +51,23 @@ body{
     color: 	#FFFFE0;
 }
 
+.font-custom-1{
+    color: 	#F5FFFA;
+    margin: 10px;
+    font-size: 25px;;
+    font-family: monaco, Consolas, 'Courier New', Courier, monospace;
+    line-height: 50px;
+    text-align: justify;/*文本对齐，justify是两端对齐*/
+}
+
+.font-custom-2{
+    font-size: 60px;
+    margin: 10px;
+    font-weight: bold;/*设置字体加粗*/
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 .right{
     float: right;
     width: 50%;
@@ -64,7 +81,7 @@ body{
     border-radius: 20px;
 }
 
-.content-left-inner > p{
+/* .content-left-inner > p{
     margin: 10px;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
@@ -72,8 +89,14 @@ body{
     text-align: justify;
     color: #F8F8FF;
     text-indent: 2em;
-}
+} */
 
+.footer{
+    margin: 10px;
+    height: 500px;
+    width: auto;
+    background-color: #FFF0F5;
+}
 
 
 
