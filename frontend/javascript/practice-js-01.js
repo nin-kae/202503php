@@ -1,4 +1,4 @@
-alert('你好，东京123');
+alert ('你好，东京123') ;
 
 // 变量与数据类型
 // 变量：存储数据的容器
@@ -32,7 +32,7 @@ let n = null;
 
 // Undefined:未定义
 let age;//undefined
-console.log(age);
+console.log (age) ;
 
 // Object:对象类型
 let userInfo={
@@ -40,13 +40,13 @@ let userInfo={
     age:18,
     address:'东京'
 };
-console.log(userInfo);
+console.log (userInfo) ;
 
 // Array:数组类型
 let colors = ['red','yellow','blue'];
-let scores = [100,90,80];
-console.log(colors);
-console.log(scores);
+let scores = [100, 90, 80];
+console.log (colors) ;
+console.log (scores) ;
 
 // Function:函数类型
 function sayHello(username){
@@ -56,23 +56,23 @@ console.log(sayHello(username = '你好，东京'));
 
 // 3. 数据类型检测
 // 基本数据类型:number,string,boolean,null,undefined
-console.log(typeof StudenCountnumber);//number
-console.log(typeof username);//string
-console.log(typeof isok);//boolean
-console.log(typeof n);//object
-console.log(typeof scores);//object
-console.log(typeof sayHello);//function
+console.log (typeof StudenCountnumber) ;//number
+console.log (typeof username) ;//string
+console.log (typeof isok) ;//boolean
+console.log (typeof n) ;//object
+console.log (typeof scores) ;//object
+console.log (typeof sayHello) ;//function
 
 //4.运算符
 // 算数运算符:+,-,*,/,%
 let num1 = 10;
 let num2 = 3;
 
-console.log(num1 + num2);//13
-console.log(num1 - num2);//7
-console.log(num1 * num2);//30
-console.log(num1 / num2);//3.3333333333333335
-console.log(num1 % num2);//1 余数   10/3=3...1
+console.log (num1 + num2) ;//13
+console.log (num1 - num2) ;//7
+console.log (num1 * num2) ;//30
+console.log (num1 / num2) ;//3.3333333333333335
+console.log (num1 % num2) ;//1 余数   10/3=3...1
 num1++;//10
 console.log(num1);//11
 num2--;//3
@@ -84,22 +84,22 @@ let totalPrice = productPrice * productCount;
 console.log(totalPrice);
 
 //比较运算符:>,<,>=,<=,==,!=，===,!==
-console.log(10 > 5);//true
-console.log(10 < 5);//false
-console.log(10 >= 5);//true
-console.log(10 <= 5);//false
-console.log(10 == 5);//false
-console.log(10 != 5);//true  判断类型 不判断值
-console.log(10 === 5);//false 先判断值 再判断类型 两者都一样才能对
-console.log(10 !== 5);//true 不全等于，值不一样或者类型不一样，其中一个相等就是对的
+console.log (10 > 5) ;//true
+console.log (10 < 5) ;//false
+console.log (10 >= 5) ;//true
+console.log (10 <= 5) ;//false
+console.log (10 == 5) ;//false
+console.log (10 != 5) ;//true  判断类型 不判断值
+console.log (10 === 5) ;//false 先判断值 再判断类型 两者都一样才能对
+console.log (10 !== 5) ;//true 不全等于，值不一样或者类型不一样，其中一个相等就是对的
 //在工作中，建议使用===,!==
 
 //逻辑运算符:&&,||,!
 let islogin1 = true;
 let isAdmin1 = false;
-console.log(islogin1 && isAdmin1);//false，且/与/并且/and，两者都为真，结果才为真
-console.log(islogin1 || isAdmin1);//true，或/或者/or，两者有一个为真，结果就为真
-console.log(!islogin1);//false，非/取反/not，取反，就是做了一个相反的操作
+console.log (islogin1 && isAdmin1) ;//false，且/与/并且/and，两者都为真，结果才为真
+console.log (islogin1 || isAdmin1) ;//true，或/或者/or，两者有一个为真，结果就为真
+console.log (!islogin1) ;//false，非/取反/not，取反，就是做了一个相反的操作
 
 // 流程控制
 // 1.条件语句 if...else
@@ -140,17 +140,17 @@ console.log(price);
 let day = 3;
 switch(day){
     case 1:
-        console.log('星期一');
+        console.log ('星期一') ;
         break;
     case 2:
-        console.log('星期二');
+        console.log ('星期二') ;
         break;
     case 3:
-        console.log('星期三');
+        console.log ('星期三') ;
         break;
     default:
-        console.log('没有找到对应的星期');
+        console.log ('没有找到对应的星期') ;
 }
 
 // 引用数据类型:object,array,function
-// typeof:检测数据类型
+// typeof:检测数据类型 
