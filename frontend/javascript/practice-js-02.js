@@ -151,4 +151,46 @@ function sayGoodbye(){
 
 let Goodbye=sayGoodbye
 
-console.log ( '----------- 参数的解构赋值 -----------' );
+console.log ( '----------- 递归函数 -----------' );
+
+
+console.log ( '----------- 闭包 -----------' );
+
+function createCounter(){
+    let count = 0;
+    return function(){
+        count++;
+        return count;
+    }
+}
+
+let counter = createCounter();
+
+console.log(counter());
+console.log(counter());
+
+//闭包的应用场景：1.模块化开发 2.防抖和节流 3.保存变量 4.缓存数据
+
+
+// JS 事件处理
+//事件是用户和浏览器之间的交互
+//事件处理是指事件发生时执行的代码
+
+//常见的事件
+// 1. 鼠标事件：
+//
+//
+//
+//
+//
+
+console.log ( '----------- 事件处理 -----------' );
+
+//document 是一个对象，代表整个HTML 文档 
+//window 是一个对象，代表浏览器窗口
+// JS 中已经帮我门封装好了很多对像以及对象的方法，我们只需要调用即可
+
+// console.dir ( document )
+
+
+console

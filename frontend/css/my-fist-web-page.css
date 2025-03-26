@@ -3,7 +3,7 @@
     width: 100%;
     background-color: #e5e5e5;
     border-radius: 5px;
-    box-shadow: 1px 2px 10px #F5F5F5;
+    box-shadow: 0 3px 10px #565555;
 }
 
 .navbar-left-logo-img{
@@ -20,15 +20,13 @@
     display: flex;
     float: left;
     text-align: left;
-    margin-left: 200px;
-}
-
-.navbar-center{
-    display: flex;
-    justify-content: center;/*水平居中*/
-    align-items: center;/*垂直居中*/
-    height: 1px;
-    margin-bottom: 18px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 400px;
+    margin-top: 15px;
+    color: #696969;
+    letter-spacing: 5px;
+    
 }
 
 .search-bar{
@@ -55,8 +53,9 @@
         color: 	#696969;
         text-decoration: none;
         margin-left: 50px;
+        letter-spacing: 2px;
     
-        padding-top: 15px;
+        padding-top: 55px;
         padding-right: 20px;
         display: inline-block;
 }
@@ -67,7 +66,7 @@
     height: 35px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 15px;
+    margin-top: 55px;
     border-radius: 20%;
 }
 
@@ -81,6 +80,76 @@
     display: flex;
     margin-top: 15px;
 }
+
+.card{
+    max-width: 400px;
+    margin: 20px auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding-left: 80px;
+    padding-right: 80px;
+    text-align: center;
+    border:1px solid #ccc;
+    border-radius: 10px;
+    /* box-shadow: 0 -2px 5px #888888; */
+    background: #dddcdc;
+
+    position:fixed;
+    left: 300px;
+    bottom: 0;
+}
+
+.card-line1 + .card-line2{
+    width: 400px;
+    margin: auto;
+}
+
+
+.card img{
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;/*边框半径*/
+    margin-bottom: 10px;
+}
+
+.card h1{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #6495ED;
+}
+
+.card p{
+    font-size: 20px;
+    color: 	#8B4513;
+}
+
+.contact{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.contact a{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: 	#FFFAFA;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;/*鼠标移动到链接上时显示手型*/
+    text-decoration: none;
+    color: #8B4513;
+}
+
+.card a:hover{
+    background-color: #6495ED;
+    color: #FFFAFA;
+}
+
+.inof{
+    list-style: none;
+}
+
+
 
 .main-left{
     display: flex;
