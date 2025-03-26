@@ -28,30 +28,48 @@
         </div>
         <div class="navbar-center">
             <!-- 搜索框 -->
+            <div class="navbar-center">
+                <form action="/search" method="get" class="search-bar">
+                    <input type="text" name="keyword" id="search" placeholder="搜索" value="请输入关键字">
+                    <button type="submit">
+                        <i class="icon-search">搜索</i>
+                    </button>
+                </form>
+            </div>
         </div>
         <div class="navbar-right">
             <!-- 这里是用户信息/通知等 -->
+            <div class="navbar-right">
+                <a href="/profile" class="user-avator">
+                    <img src="/Users/bou_harumi/Desktop/xiaomao.jpg" alt="用户头像" class="user-avator-img">
+                </a>
+                
+            </div>
         </div>
-        <div class="navbar-center">
-            <form action="/search" method="get" class="search-bar">
-                <input type="text" name="keyword" id="search" placeholder="搜索" value="请输入关键字">
-                <button type="submit">
-                    <i class="icon-search">搜索</i>
-                </button>
-            </form>
+        
+    </div>
+
+    <div class="main">
+        <div class="main-left">这里主模块左边
         </div>
-        <div class="navbar-right">
-            <a href="/profile" class="user-avator">
-                <img src="/Users/bou_harumi/Desktop/xiaomao.jpg" alt="用户头像">
-            </a>
-            
-            <button class="lang-toggl">文/图切换</button>
-            <a href="/messages" class="masg-icon">
-                <i class="icon-mail"></i>
-                <span class="msg-count"></span>
-            </a>
-            
+        <div class="main-center">这里主模块中间
         </div>
+        <div class="main-right">这里主模块右边
+        </div>
+
+
+
+    </div>
+    
+    
+    <div class="footer">
+        <div class="footer-left">这里底部模块左边
+        </div>
+        <div class="footer-center">这里底部模块中间
+        </div>
+        <div class="footer-right">这里底部模块右边
+        </div>
+
 
     </div>
 
