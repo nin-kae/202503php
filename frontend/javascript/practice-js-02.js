@@ -364,12 +364,12 @@ document.getElementById("btn-mouseover").onmouseout = function () {
 }
 
 //鼠标事件4.mouseout:
-document.addEventListener('btn-mouseout', function(){
+document.addEventListener('DOMContentLoaded', function(){
     const btn = document.getElementById ( 'btn-mouseout' );
     
     btn.addEventListener ( 'mouseout', function(){
         btn.style.backgroundColor = '	#FFC0CB';
-        btn.innerText = '鼠标移出去了'
+        btn.innerText = '鼠标移出去了';
         
     });
 
