@@ -6,69 +6,35 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学习 JavaScript 第二天</title>
-    <style>
-        body{
-            font-family: 'Courier New', Courier, monospace;
-            background-color: antiquewhite;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        form{
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        label{
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        input[type='number']{
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #218838;
-        }
-
-        #bmi-result{
-            margin-top: 20px;
-            font-size: 20px;
-            color: #495057;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-
-<form action="#" id="bmi-form">
-    <label for="height">身高(cm)：</label>
-    <input type="number" id="height" placeholder="请输入身高">
-    <br>
-    <label for="weight">体重(kg)：</label>
-    <input type="number" id="weight" placeholder="请输入体重">
-    <br>
-    <p id="bmi-result">「这里会显示运算结果」</p>
-    <br>
-    <button id="btn-caculate"></button>
-</form>
-    
-
+<div class="container">
+    <div class="nav">
+        <a>首页</a>
+        <a>关于</a>
+        <a>联系</a>
+    </div>
+    <div class="main">
+        <div>
+            <h1>学习 JS 第二天</h1>
+            <button class="btn" id="btn-onclick">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-dblclick">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-mouseover">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-mouseout">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-mousedown">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-mouseup">这是用来测试 JS 鼠标事件的按钮</button>
+            <button class="btn" id="btn-mousemove">这是用来测试 JS 鼠标事件的按钮</button>
+        </div>
+        <div class="account">
+            <form action="" class="account-form">
+                <label for="username"></label>
+                <input type="text" name="username" id="username" placeholder="请输入用户名">
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</div>
     <script src="./practice-js-02.js" ></script>
 </body>
 </html>

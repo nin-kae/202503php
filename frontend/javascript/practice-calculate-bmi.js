@@ -1,10 +1,10 @@
-// calculateBMI.js
+// calculate-bmi.js
 
 function calculateBMI () {
     let weight = parseFloat ( document.getElementById ('weight') .value );
     let height = parseFloat ( document.getElementById ('height') .value );
 
-    // NaN 是 Not a Number 的缩写, 表示不是一个数字
+    // NaN 是 not a number 的缩写, 表示不是一个数字
     if ( isNaN ( weight ) || weight <= 2.5 ) {
         alert ( "请输入有效体重" );
         return;
