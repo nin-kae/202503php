@@ -345,21 +345,41 @@ console.log ( '----------- 事件处理 -----------' );
 
 // console.dir(document); // 查看对象的属性和方法
 
+//鼠标事件1.click
 document.getElementById("btn-onclick").onclick = function () {
-    alert("这是鼠标点击事件");
+    alert("这是鼠标单击点击弹窗");
 }
 
+//鼠标事件2.dblclick
 document.getElementById("btn-dblclick").ondblclick = function () {
-    alert("这是鼠标双击事件");
+    alert("这是鼠标双击弹窗");
 }
 
-// 鼠标移入事件, 当鼠标移入按钮时, 按钮的背景颜色变为 #FF0080
+//鼠标事件3.mouseover: 当鼠标移入按钮时, 按钮的背景颜色变为 #FF0080
 document.getElementById("btn-mouseover").onmouseover = function () {
     document.getElementById("btn-mouseover").style.backgroundColor = "#FF0080";
 }
 document.getElementById("btn-mouseover").onmouseout = function () {
     document.getElementById("btn-mouseover").style.backgroundColor = "#4C4C4C";
 }
+
+//鼠标事件4.mouseout:
+document.addEventListener('btn-mouseout', function(){
+    const btn = document.getElementById ( 'btn-mouseout' );
+    
+    btn.addEventListener ( 'mouseout', function(){
+        btn.style.backgroundColor = '	#FFC0CB';
+        btn.innerText = '鼠标移出去了'
+        
+    });
+
+    btn.addEventListener ( 'mouseover', function () {
+        btn.style.backgroundColor = '';
+        btn.innerText = '测试 JS 鼠标事件4.mouseout的按钮';
+    });
+});
+
+
 
 document.getElementById("username").onfocus = function () {
     document.getElementById("username").style.backgroundColor = "#E5E5E5";
