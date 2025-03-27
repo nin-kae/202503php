@@ -5,9 +5,9 @@
     <meta name="viewport" 
         content="width=device-width, user-scalable=no, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>学习 JavaScript 第二天</title>
+    <title>用js学习做 calculabmi</title>
     <style>
-        body{
+        body {
             font-family: 'Courier New', Courier, monospace;
             background-color: antiquewhite;
             margin: 0;
@@ -42,6 +42,18 @@
             font-size: 16px;
         }
 
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
         button:hover {
             background-color: #218838;
         }
@@ -65,10 +77,16 @@
     <br>
     <p id="bmi-result">「这里会显示运算结果」</p>
     <br>
-    <button id="btn-caculate"></button>
+    <button id="btn-calculate">点击</button>
 </form>
-    
 
-    <script src="./practice-js-02.js" ></script>
+<script>
+    document.getElementById ( 'btn-calculate' ) .addEventListener('click', function (e) {
+        e.preventDefault(); // 阻止默认提交行为
+    });
+</script>
+
+<script src="./practice-calculate-bmi.js" ></script>
+
 </body>
 </html>
