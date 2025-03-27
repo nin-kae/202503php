@@ -73,35 +73,42 @@
 .main{
     /* width: 400px;
     height: 400px; */
-    flex: 4;
-    height: 1000px;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
     background-color: #F5F5F5;
 
     display: flex;
     margin-top: 15px;
+    position: relative;
 }
 
 .card{
-    width: 400px;
-    margin: 20px auto;
-    padding-top: 50px;
-    padding-bottom: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: center;
-    border:1px solid #ccc;
-    border-radius: 10px;
-    /* box-shadow: 0 -2px 5px #888888; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
     background: #dddcdc;
+    border-radius: 10px;
+    width: 400px;
+    z-index: 100;
 
-    position:fixed;
-    left: 300px;
-    bottom: 0;
+    position: fixed;
+    top: 420px;
+    left: 12%;
+    right: 45%; 
+    
 }
 
-.card-line1 + .card-line2{
-    width: 400px;
-    margin: auto;
+.card-line1,
+.card-line2 {
+    height: 2px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 2px;
+    width: 90%;
+    margin: 10px auto;
 }
 
 
@@ -168,31 +175,42 @@
     list-style: none;
 }
 
-
-
-.main-left{
-    display: flex;
-    flex: 1;
-    height: 1000px;
-    background-color: #F5F5F5;
-
+.main-bottom{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1500px;
+    height: 600px;
+    background-color: #bd4d4d;
+    z-index: 10; /* 越大越在上面 */
+    border-top-left-radius: 0; 
+    border-top-right-radius: 0; 
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+    box-sizing: border-box;
 }
+
+.right-box {
+    position: absolute;
+    top: 420px;    /* 这个值你可以手动调一下位置 */
+    left: 40%;
+    right: 20%;        /* 根据猫猫卡片的偏移调整 */
+    width: 1100px;
+    height: 1200px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    z-index: 10;
+  }
 
 .main-center{
-    display: flex;
-    flex: 4;
-    height: 1000px;
+    position: relative; 
+    flex: auto;
+    height: 1500px;
     background-color: #e5e5e5;
-
-
-}
-
-.main-right{
-    display: flex;
-    flex: 1;
-    height: 1000px;
-    background-color:	#F5F5F5;
-
+    z-index: 1;
 }
 
 .footer{
