@@ -386,28 +386,36 @@ document.addEventListener('DOMContentLoaded', function(){
 //这个是mousedown是按下去会变颜色的代码
 const btnMouseDown = document.getElementById('btn-mousedown');
 
-btnMouseDown.addEventListener('mousedown', function () {
+btnMouseDown.addEventListener ( 'mousedown', function () {
   btnMouseDown.style.backgroundColor = '#FFA07A'; // 浅橙红
   btnMouseDown.innerText = '鼠标5.mousedown的按钮按下了';
 });
 
-btnMouseDown.addEventListener('mouseup', function () {
+btnMouseDown.addEventListener ( 'mouseup', function () {
   btnMouseDown.style.backgroundColor = '#007BFF'; // 原色复原
   btnMouseDown.innerText = '测试 JS 鼠标事件5.mousedown的按钮';
 });
 
 //鼠标事件6.mouseup: 与mousedown相反；无论左，中，右键，只要松开就会触发
-const btn = document.getElementById('btn-mouseup');
+const btnMouseUp = document.getElementById ( 'btn-mouseup' );
 
-btn.addEventListener('mousedown', function () {
-  btn.style.backgroundColor = '	#4682B4';
-  btn.innerText = '鼠标6.mouseup的按钮按钮按下了';
+btnMouseUp.addEventListener ( 'mousedown', function () {
+  btnMouseUp.style.backgroundColor = '	#4682B4';
+  btnMouseUp.innerText = '鼠标6.mouseup的按钮按下了';
 });
 
-btn.addEventListener('mouseup', function () {
-  btn.style.backgroundColor = '	#3CB371';
-  btn.innerText = '鼠标6.mouseup的按钮按钮按下了';
+btnMouseUp.addEventListener('mouseup', function () {
+  btnMouseUp.style.backgroundColor = '	#3CB371';
+  btnMouseUp.innerText = '鼠标6.mouseup的按钮按下了';
 });
+
+//鼠标事件7.mousemove: 鼠标在元素上移动，就会一直出发效果
+const btnMouseMove = document.getElementById('btn-mousemove');
+
+    btnMouseMove.addEventListener('mousemove', function () {
+    btnMouseMove.style.backgroundColor = '#' + Math.floor ( Math.random () * 16777215 ) .toString ( 16 );
+    btnMouseMove.innerText = '鼠标7.mousemove的按钮按下了';
+  });
 
 document.getElementById("username").onfocus = function () {
     document.getElementById("username").style.backgroundColor = "#E5E5E5";
