@@ -374,7 +374,7 @@ document.addEventListener('btn-mouseout', function(){
     });
 
     btn.addEventListener ( 'mouseover', function () {
-        btn.style.backgroundColor = '';
+        btn.style.backgroundColor = '	#00FFFF';
         btn.innerText = '测试 JS 鼠标事件4.mouseout的按钮';
     });
 });
