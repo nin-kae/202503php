@@ -25,4 +25,19 @@ $('#header').css ( 'background-color', ' #B2B2B2' ); // 设置元素样式
 // $( 'p .note' ).css ( 'color', 'red' );  //设置后代元素的样式
 
 // 直接子元素选择器(>)，会选择 class 为 content-5 的元素下面的所有 span 元素
-$
+
+// 兄弟选择器
+
+// 内容操作
+
+// 获取元素
+let titleElement = $ ( '#title' );
+
+// 获取和设置 HTML 内容
+let html = titleElement.html();
+
+// 获取元素的文本内容
+
+// 设置元素的 HTML 内容，会覆盖原有标签内的内容
+
+// .HTML
