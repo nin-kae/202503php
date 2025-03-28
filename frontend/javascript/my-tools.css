@@ -10,7 +10,7 @@ nav {
     color:bisque;
     padding: 1px 0;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
     
     display: flex;
     justify-content: center;
@@ -45,51 +45,102 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
+    letter-spacing: 1px;
 
 }
 
 .timer-box, .calculate-bmi {
-    background-color: rgb(71, 70, 95);
-    border-radius: 8px;
-    border: 3px solid antiquewhite;
+    /* background-color: rgb(71, 70, 95); */
+    border-radius: 50px;
+    border: 5px solid rgb(71, 70, 95);;
     box-shadow: 0 0 10px white;
     margin: 50px auto;
     padding: 30px;
     margin-top: 70px;
-    /* max-width: 400px; */
+    padding-bottom: 50px;
+    max-width: 400px;
     text-align: center;
 }
+
+/* .timer-box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #f88379;
+} */
+
+.timer-link1 {
+    color: rgb(71, 70, 95);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.bmi-link1 {
+    color: rgb(71, 70, 95);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
 
 h1  {
     font-size: 80px;
     margin-bottom: 40px;
-    color: antiquewhite;
+    color: rgb(71, 70, 95);
 }
 
 button {
-    background-color: antiquewhite;
+    background-color: rgb(71, 70, 95);
     border: none;
     color: aliceblue;
     padding: 0 80px;
-    margin: 10px;
+    /* margin: 10px; */
     margin-top: 40px;
-    border-radius: 30px;
+    border-radius: 60px;
     cursor: pointer;
+
+}
+
+.btn-calculate {
+    padding: 20px 80px;
 
 }
 
 .botton-text1,
 .botton-text2,
-.botton-text3  {
-    color: rgb(71, 70, 95);
-    font-size: 20px;
+.botton-text3,
+.btn-calculate {
+    font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    letter-spacing: 1px;
+}
 
+.height,
+.weight,
+.bmi-result {
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 25px;
+    color: rgb(71, 70, 95);
 }
 
 button:hover {
-    background-color: rgb(71, 70, 95);
+    background-color: rgb(26, 26, 49);
+}
+
+input[type="number"] {
+    width: 180px;
+    padding: 6px 15px;
+    font-size: 16px;
+    border: 2px solid rgb(71, 70, 95);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
 input [ type = 'number' ] {
@@ -98,6 +149,11 @@ input [ type = 'number' ] {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+input[type="number"]:focus {
+    border-color: rgb(26, 26, 49);/* focus 高亮 */
+    box-shadow: 0 0 5px rgb(26, 26, 49);
 }
 
 #bmi-result {

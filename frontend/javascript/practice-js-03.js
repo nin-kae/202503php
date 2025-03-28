@@ -61,3 +61,46 @@ let person = {
 person.sayHello ();
 person.eat ();
 console.log (person.name);
+
+// 使用构造函数创建对象
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+let student = new Person ( '李四', 18 );
+console.log ( student.name );
+
+// 使用 class 关键字创建类
+class Animal {
+    constructor(name) {
+        this.nmae = name;
+    }
+
+    sayHello() {
+        console.log( 'Hello, my name is ${this.name}' ); 
+    }
+
+}
+
+let cat = new Animal ( 'Tom' ); //通过类创建对象
+cat.sayHello ();
+
+class Car {
+    constructor ( brand, price ) {
+        this.brand = brand;
+        this.price = price;
+    }
+
+    run() {
+        console.log ( '${this.brand} is running' );
+    }
+}
+
+let bmw = new Car ( 'BMW', 300000 );
+console.log ( bmw.brand );
+
+// 继承
+class Dog extends Animal {
+    
+}
