@@ -52,7 +52,7 @@ function calculateBMI(){
 
     let innerHTML = '您的 BMI 值是：' + bmi;
 
-    // 计算结果resul
+    // 计算结果result
     if (bmi < 18.5) {
         resultElement.innerHTML = innerHTML + ' 体重过轻';
     } else if ( bmi < 24 ) {
