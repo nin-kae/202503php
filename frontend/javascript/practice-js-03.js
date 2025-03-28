@@ -54,7 +54,7 @@ let person = {
     name: '张三', age: 20, sayHello: function() {
         console.log ( 'Hello, my name is ${this.name}' );
     }, eat: function () {
-        console.log ( this.name + ' am eating' )
+        console.log ( this.name + ' is eating' )
     }
 };
 
