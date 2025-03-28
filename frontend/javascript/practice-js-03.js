@@ -43,3 +43,21 @@ child.addEventListener ( 'click', function (event) {
     event.stopPropagation (); //阻止事件弹窗
     alert ( '子元素被点击了' )
 });
+
+// console.dir (parrent);
+
+// JS 中的对象和类
+// 对象就是把一类事物抽象出来，用属性和方法（行为）来描述
+
+// 直接创建对象
+let person = {
+    name: '张三', age: 20, sayHello: function() {
+        console.log ( 'Hello, my name is ${this.name}' );
+    }, eat: function () {
+        console.log ( this.name + ' am eating' )
+    }
+};
+
+person.sayHello ();
+person.eat ();
+console.log (person.name);
