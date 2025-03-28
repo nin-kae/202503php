@@ -102,5 +102,13 @@ console.log ( bmw.brand );
 
 // 继承
 class Dog extends Animal {
-    
+    bark() {
+        console.log ( '汪汪汪' );
+    }
 }
+
+let dog = new Dog ( '旺财' );
+dog.sayHello ();
+dog.bark ();
+// cat.bark (); // 报错
+
