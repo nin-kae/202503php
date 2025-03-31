@@ -147,9 +147,9 @@ try {
     $element.addEventListener ( 'click', function () {
         alert ( '元素被点击了' );
     });
-    console.log ( '$element' );
-} catch ( error) {
-    console.error ( '发生错误' + error.message );
+    console.log ( $element );
+} catch ( error ) {
+    console.error ( '发生错误: ' + error.message );
 } finally {
     // 无论是否发生错误，都会执行
     console.log ( 'finally' );
@@ -175,12 +175,53 @@ let heading = document.getElementById ( 'heading' );
 // .textContent 获取元素的文本内容
 console.log ( heading.textContent );
 
-let item = document.getElementsByClassName ( 'item' );
+let items = document.getElementsByClassName ( 'item' );
 // console.log ( items );
 // console.log ( items [0].textContent );
 for ( let item of items ) {
     if (item.textContent === 'PHP' ) {
-        items.style.color = 'red';
+        item.style.color = 'red';
     }
     console.log ( item.textContent );
 }
+
+let liElement = document.getElementsByTagName ( 'li' ); // 获取所有li元素
+let liElementPython = document.getElementsByTagName ( 'li' ) [ 1 ];  // 获取第二个 li 元素
+liElementPython.style.color = 'blue';
+
+let itemElementJava = document.querySelector ( '.item' ); // 获取第一个匹配元素
+itemElementJava.style.color = 'green';
+itemElementJava.textContent = 'Go';
+//let itemElementGo = itemElementJava
+
+let itemElements = document.querySelectorAll ( '.item' ); //获取所有匹配的元素
+let itemElementJavaScript = document.querySelectorAll ( '.item' ) [ 2 ]; //获取第三个匹配元素
+// .forEach () 方法遍历所有元素
+itemElements.forEach ( function (item) {
+    console.log ( item.textContent );
+});
+itemElementJavaScript.style.color = 'purple';
+
+// JS 操作 DOM 对象的使用场景事例
+// 因还没学习后端网络请求相关技术，所以直接定义一个 userinfo 用来模拟到服务器获取到的数据
+let getUserinfoElement = document.getElementById ( 'get-userinfo' );
+getUserinfoElement.addEventListener ( 'click', function () {
+    //获取用户信息，这里因为我们...
+    //fetch ( 'http:/localhost:8080/get-userinfo' )
+    //  .then (
+                //这里就可以将获取到的数据显示在页面上
+    //  )
+
+    let useronfo = {
+        username: 'nin-kae', email: 'renhuaying0401@gmail.com'
+    }
+
+    // 将用户信息使用 JS 的 DOM 操作来显示在页面上
+    let userinfoElement = document.getElementById ( 'userinfo' );
+    for ( let key in userinfo ) {
+        let liElement = document.createElement ( 'li' )
+        liElement.textContent = key + ' : ' + userinfo [ key ];
+        userinfoElement.appendChild ( liElement )
+        // console.log ( 'key: ' + ' value: ' + userinfo [ key ] )
+    }
+});
