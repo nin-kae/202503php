@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 学习 Bootstrap 第一天</title>
+    <link rel="stylesheet" href="../asset/bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container bg-light mb-5">
+    <h1 class="text-primary">Hello Bootstrap!</h1>
+    <p class="lead">栅格系统 （Grid System）</p>
+
+    <div class="row">
+        <div class="col border">列 1</div>
+        <div class="col border">列 2</div>
+        <div class="col border">列 3</div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 bg-primary">宽度 4</div>
+        <div class="col-8 bg-secondary">宽度 8</div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 bg-secondary">内容A</div>
+        <div class="col-12 col-md-4 bg-success">内容B</div>
+        <div class="col-12 col-md-4 bg-warning">内容C</div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 bg-light">第一列</div>
+        <div class="col-6 bg-danger">第二列</div>
+        <div class="col-6 bg-info">第三列（会换行）</div>
+    </div>
+
+    <div class="row align-items-center justify-content-between">
+        <div class="col-4 bg-primary text-white">A</div>
+        <div class="col-4 bg-success text-white">B</div>
+        <div class="col-4 bg-primary text-white">C</div>
+    </div>
+
+    //嵌套列
+    <div class="row">
+        <div class="col-6 bg-info">
+            <div class="row">
+                <div class="col-6 bg-danger">嵌套列 1</div>
+                <div class="col-6 bg-warning">嵌套列 2</div>
+            </div>
+        </div>
+        <div class="col-6 bg-secondary">外层列</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-xl-3 col-md-4 col-sm-6 bg-danger">123</div>
+        <div class="col-3 col-xl-6 bg-info">456</div>
+    </div>
+
+    <hr>
+    <h1 class="text-primary">常用组件 （Components）</h1>
+    <h2>按钮 （Button）</h2>
+    <button class="btn btn-primary">主按钮</button>
+    <button class="btn btn-secondar">次按钮</button>
+    <button class="btn btn-sucess">成功</button>
+    <button class="btn btn-danger">警告</button>
+    <button class="btn btn-warning">黄色警告</button>
+    <button class="btn btn-info">信息</button>
+    <button class="btn btn-light">浅色</button>
+    <button class="btn btn-dark">深色</button>
+
+    <!-- 块级元素 -->
+    <a class="btn btn-outline-secondary w-100" href="#">100% 宽按钮</a>
+
+    <h2>警告框 （Alert）</h2>
+    <div class="alert alert-success">操作成功！</div>
+    <div class="alert alert-danger">发生错误！</div>
+    <div class="alert alert-warning">请注意！</div>
+
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        这是个可关闭的提示框
+        <button type="button" class=""></button>
+    </div>
+
+
+    <hr>
+    <h1 class="text-primary">表单系统 （Forms）</h1>
+    <form>
+        <label for="email" class="form-label">邮箱地址</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <label for="password" class="form-label">密码:</label>
+        <input type="password" class="form-control" id="password" placeholder="密码">
+        <label for="count" class="form-label">数量:</label>
+        <input type="count" class="form-control" id="count" placeholder="数量">
+        <label for="password" class="form-label">请上传图片:</label>
+        <input type="file" class="form-control" id="avatar">
+    </form>
+</div>
+
+
+
+<!-- 引入 Bootstrap JavaScript 和 jQuery  -->
+<script src="../asset/bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="../asset/jQuery-3.6.0.min.js"></script>
+</body>
+</html>
