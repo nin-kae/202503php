@@ -74,3 +74,29 @@ document.getElementById ( 'btn-calculate' ).onclick = function () {
 };
 
 // 计算 BMI 结束
+
+// 待办事项
+let input = document.getElementById ( 'todo-input' );
+let addButton = document.getElementById ( 'add-btn' );
+let todoList = document.getElementById ( 'todo-list' );
+
+addButton.addEventListener ( 'click', () => {
+    let text = input.value.trim ();
+    if (text) {
+        let listItem = document.createElement ( 'li' );
+        listItem.textContent = text;
+
+        let deleteButton = document.createElement ( 'button' );
+        deleteButton.textContent = '删除';
+        deleteButton.addEventListener ( 'click', () => {
+            todoList.removeChild ( listItem );
+        });
+
+        listItem.appendChild (deleteButton);
+        todoList.appendChild (listItem);
+        
+        input.value = ''; // 清空输入框        
+    } else {
+        alert ( '请输入内容！' );
+    }
+});

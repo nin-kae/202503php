@@ -16,14 +16,21 @@ nav {
     justify-content: center;
 }
 
+.nav-links {
+    display: flex;
+    gap: 30px; /* 可选：控制标题之间的间距 */
+    list-style: none; /* 移除前面的圆点 */
+    align-items: center; /* 垂直居中 */
+}
+
 .nav-container {
     display: flex;
     align-items: center;
 }
 
 .nav-logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     /* border-radius: 10px; */
     
 }
@@ -49,7 +56,9 @@ nav ul li a {
 
 }
 
-.timer-box, .calculate-bmi {
+.timer-box,
+.calculate-bmi,
+.todo {
     /* background-color: rgb(71, 70, 95); */
     border-radius: 50px;
     border: 5px solid rgb(71, 70, 95);;
@@ -69,22 +78,15 @@ nav ul li a {
     border: 3px solid #f88379;
 } */
 
-.timer-link1 {
-    color: rgb(71, 70, 95);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 38px;
-    letter-spacing: 2px;
-}
-
-.bmi-link1 {
+.timer-link1,
+.bmi-link1,
+.item-link1 {
     color: rgb(71, 70, 95);
     text-decoration: none;
     font-weight: bold;
     font-size: 32px;
     letter-spacing: 2px;
 }
-
 
 h1  {
     font-size: 80px;
@@ -104,7 +106,8 @@ button {
 
 }
 
-.btn-calculate {
+.btn-calculate,
+.add-btn {
     padding: 20px 80px;
 
 }
@@ -112,7 +115,8 @@ button {
 .botton-text1,
 .botton-text2,
 .botton-text3,
-.btn-calculate {
+.btn-calculate,
+.add-btn {
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -121,7 +125,8 @@ button {
 
 .height,
 .weight,
-.bmi-result {
+.bmi-result,
+.item {
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -151,7 +156,7 @@ input [ type = 'number' ] {
     border-radius: 5px;
 }
 
-input[type="number"]:focus {
+input[type= "number" ]:focus {
     border-color: rgb(26, 26, 49);/* focus 高亮 */
     box-shadow: 0 0 5px rgb(26, 26, 49);
 }
@@ -159,4 +164,27 @@ input[type="number"]:focus {
 #bmi-result {
     font-size: 1.2em;
     margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 180px;
+    padding: 6px 15px;
+    font-size: 16px;
+    border: 2px solid rgb(71, 70, 95);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input [ type = 'text' ] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type= "text" ]:focus {
+    border-color: rgb(26, 26, 49);/* focus 高亮 */
+    box-shadow: 0 0 5px rgb(26, 26, 49);
 }
