@@ -1,7 +1,64 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 100px;
+    background-color: #f0f0f0;
+}
+
 h1 {
     color: red;
 }
 
-p {
-    color: blue;
+.active {
+    color: green;
+}
+
+.btn-bg {
+    background-color: #80FFFF;
+}
+
+.main {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event button {
+    margin: 0 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.animation {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 800px;
+    height: 200px;
+    background-color: #f0f0f0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.box-2 {
+    width: 100px;
+    height: 100px;
+    background-color: #00FF00;
 }
