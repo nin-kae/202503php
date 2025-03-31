@@ -112,3 +112,75 @@ dog.sayHello ();
 dog.bark ();
 // cat.bark (); // 报错
 
+// JS 中的异步编程
+// 同步代码, 顺序执行
+// 异步代码, 不会阻塞后续代码执行
+// Promise, async/await, callback
+
+// let promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('Hello, Promise');
+//     }, 2000); // 2 秒后执行
+// });
+//
+// promise.then((value) => {
+//     console.log(value);
+// });
+//
+// console.log('Promise called');
+
+// async function fetchData() {
+//     // 通过 fetch 获取数据
+//     let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+//     // 把 response 对象转换为 JSON 格式
+//     let data = await response.json();
+//     console.log(data);
+// }
+//
+// fetchData().then(r => console.log('fetchData done'));
+//
+// console.log('fetchData called');
+
+// 错误处理
+try {
+    $element = document.getElementById ( 'not-exist' );
+    $element.addEventListener ( 'click', function () {
+        alert ( '元素被点击了' );
+    });
+    console.log ( '$element' );
+} catch ( error) {
+    console.error ( '发生错误' + error.message );
+} finally {
+    // 无论是否发生错误，都会执行
+    console.log ( 'finally' );
+}
+
+// 自定义错误
+function divide ( a,b ) {
+    if ( b=== 0 ) {
+        throw new Error ( '除数不能为 0, ( 这是一个自定义错误 )' );
+    }
+    return a / b;
+}
+
+try {
+    console.log ( divide ( 10,0 ) );
+} catch ( error ) {
+    console.error ( '发生错误' + error.message );
+}
+
+// DOM 操作
+// 获取元素
+let heading = document.getElementById ( 'heading' );
+// .textContent 获取元素的文本内容
+console.log ( heading.textContent );
+
+let item = document.getElementsByClassName ( 'item' );
+// console.log ( items );
+// console.log ( items [0].textContent );
+for ( let item of items ) {
+    if (item.textContent === 'PHP' ) {
+        items.style.color = 'red';
+    }
+    console.log ( item.textContent );
+}
