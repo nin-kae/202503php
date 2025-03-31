@@ -2,10 +2,10 @@ $(function () {
 
     // 商品列表（固定）
         const productList = [
-            {id: 1, name: '无线耳机', price: 199, img: 'images/earbuds.jpg'},
-            {id: 1, name: '充电宝', price: 129, img: 'images/powerbank.jpg'},
-            {id: 1, name: '显示器', price: 1999, img: 'images/monitor.jpg'},
-            {id: 1, name: '键盘', price: 499, img: 'images/keyboard.jpg'},
+            { id: 1, name: "无线耳机", price: 199, img: "images/earbuds.jpg" },
+            { id: 1, name: "充电宝", price: 129, img: "images/powerbank.jpg" },
+            { id: 1, name: "显示器", price: 1999, img: "images/monitor.jpg" },
+            { id: 1, name: "键盘", price: 499, img: "images/keyboard.jpg" },
         ];
 
     // 渲染商品
