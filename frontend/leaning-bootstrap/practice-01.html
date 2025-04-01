@@ -77,10 +77,41 @@
     <div class="alert alert-warning">请注意！</div>
 
     <div class="alert alert-info alert-dismissible fade show" role="alert">
-        这是个可关闭的提示框
+        这是个可关闭的提示框。
         <button type="button" class=""></button>
     </div>
 
+    <h3>卡片 （Card）</h3>
+    <div class="toy" style="width: 18rem;">
+        <img src="../asset/images/xiaoba.jpg" alt="图片" class="toy-img-tops">
+        <div class="toy-body">
+            <h5 class="toy-title">Chiikawa</h5>
+            <p class="toy-text">这是可爱的小八</p>
+            <a href="#" class="btn btn-primary">了解更多</a>
+        </div>
+    </div>
+
+    <h3>模态框 （Modal）</h3>
+    <button class="btn btn-primary" data-bs-topggle="Modal" data-bs-target="#exampleModal">
+        打开模态框
+    </button>
+    <div class="modal fade" id="exampleMpdal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">模态框标题</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    这里是模态框内容
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <button class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <hr>
     <h1 class="text-primary">表单系统 （Forms）</h1>
@@ -93,7 +124,94 @@
         <input type="count" class="form-control" id="count" placeholder="数量">
         <label for="password" class="form-label">请上传图片:</label>
         <input type="file" class="form-control" id="avatar">
+        <label for="information" class="form-label">简介</label>
+        <textarea class="form-control" rows="3" id="information"></textarea>
+        <label for="city" class="form-label">请选择城市:</label>
+        <select class="form-select" id="city">
+            <option selected>请选择</option>
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+        </select>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="radio1">
+            <label class="form-check-label" for="radio1">男</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="radio2">
+            <label class="form-check-label" for="radio2">女</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="agree">
+            <label class="form-check-label" for="agree">我同意条款</label>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="firstname" class="form-label">名</label>
+                <input type="text" class="form-control" id="firstname">
+            </div>
+            <div class="col-md-6">
+                <label for="lastname" class="form-label">姓</label>
+                <input type="text" class="form-control" id="lastname">
+            </div>
+        </div>
+
+        <label for="right" class="form-label"></label>
+        <input class="form-control is-valid" id="right" type="text" value="正确">
+        <div class="valid-feedback">看起来不错！</div>
+
+        <label for="wrong" class="form-label"></label>
+        <input class="form-control is-invalid" id="wrong" type="text" value="错误">
+        <div class="invalid-feedback">请输入正确内容</div>
+
+        <label for="disabled-input" class="form-label"></label>
+        <input class="form-control" id="disabled-input" type="text" value="禁用字段" disabled>
+        <label for="readonly-input" class="form-label"></label>
+        <input class="form-control" id="readonly-input" type="text" value="只读字段" readonly>
     </form>
+
+    <hr>
+    <h1 class="text-primary">工具类（Utilities）</h1>
+    <div class="mt-5 bg-info">上边距 1rem</div>
+    <div class="px-2 py-4">左右 0.5rem，上下 1.5rem</div>
+    <div class="ms-auto">左边距自动（推到右侧）</div>
+    <div class="row">
+        <div class="col-md-4 bg-info">1</div>
+        <div class="col-md-4 bg-danger ms-5">2</div>
+        <div class="col-md-4 bg-info">3</div>
+    </div>
+    <p class="text-start">左对齐 Pagination</p>
+    <p class="text-end">右对齐 Pagination</p>
+    <p class="text-center">居中对 齐Pagination</p>
+
+    <p class="text-lowercase">全小写 Pagination</p>
+    <p class="text-uppercase">全大写 Pagination</p>
+    <p class="text-capitalize">首字母大写 pagination</p>
+
+    <p class="fw-bold">粗体 Pagination</p>
+    <p class="fst-italic">斜体 Pagination</p>
+
+    <div class="bg-primary text-white">蓝底白字</div>
+    <div class="bg-light border border-secondary p-2">浅色背景 + 灰色边框</div>
+    <div class="rounded-pill bg-info p-2">圆角胶囊边框</div>
+
+    <!-- 小屏隐藏，大屏显示 -->
+    <div class="d-none d-lg-block bg-warning">仅桌面可见</div>
+
+    <div class="d-flex justify-content-between align-items-center">
+        <span>左</span>
+        <span>右</span>
+    </div>
+
+    <div class="row">
+        <div class="w-50 bg-info">1</div>
+        <div class="w-75 bg-danger">2</div>
+    </div>
+
+    <div class="shadow-sm" style="width: 300px; height: 300px">小阴影</div>
+    <div class="shadow-lg rounded-3" style="width: 300px; height: 300px">大阴影 + 圆角</div>
+    <div class="opacity-50 bg-dark" style="width: 300px; height: 300px">透明度 50%</div>
 </div>
 
 
