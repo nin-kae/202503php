@@ -3,20 +3,19 @@ $(function () {
     // 商品列表（固定）
         const productList = [
             { id: 1, name: "无线耳机", price: 199, img: "images/earbuds.jpg" },
-            { id: 1, name: "充电宝", price: 129, img: "images/powerbank.jpg" },
-            { id: 1, name: "显示器", price: 1999, img: "images/monitor.jpg" },
-            { id: 1, name: "键盘", price: 499, img: "images/keyboard.jpg" },
+            { id: 2, name: "充电宝", price: 129, img: "images/powerbank.jpg" },
+            { id: 3, name: "显示器", price: 1999, img: "images/monitor.jpg" },
+            { id: 4, name: "键盘", price: 499, img: "images/keyboard.jpg" },
         ];
 
     // 渲染商品
         $.each ( productList, function (index, item) {
             const html = `
-            <div class="product-crad">
+            <div class="product-card">
                 <img src="${item.img}" alt="">
                 <div class="info">
                     <h3>${item.name}<h3>
-                    <div class="price">¥${item.price}
-                    </div>
+                    <div class="price">¥${item.price}</div>
                     <button class="add" data-id="${item.id}">加入购物车</button>
                 </div>
             </div>
@@ -61,7 +60,7 @@ $(function () {
             const row = $(this).closest( "tr" );
             const id = row.data ( "id" );
             const item = productList.find (p => p.id === id );
-            let qty = parseInt (row.find ("qty").text () );
+            let qty = parseInt (row.find (".qty").text () );
 
             if ( $(this).hasClass ( "inc" )) {
                 qty++;
