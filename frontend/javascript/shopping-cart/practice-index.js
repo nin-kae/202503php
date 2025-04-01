@@ -2,10 +2,10 @@ $(function () {
 
     // 商品列表（固定）
         const productList = [
-            { id: 1, name: "无线耳机", price: 199, img: "images/earbuds.jpg" },
-            { id: 2, name: "充电宝", price: 129, img: "images/powerbank.jpg" },
-            { id: 3, name: "显示器", price: 1999, img: "images/monitor.jpg" },
-            { id: 4, name: "键盘", price: 499, img: "images/keyboard.jpg" },
+            { id: 1, name: "电竞桌", price: 1199, img: "/Users/bou_harumi/Desktop/desk.jpg" },
+            { id: 2, name: "电竞椅", price: 289, img: "/Users/bou_harumi/Desktop/gaming-chair.jpg" },
+            { id: 3, name: "显示器", price: 899, img: "/Users/bou_harumi/Desktop/monitor.jpg" },
+            { id: 4, name: "电脑主机", price: 2499, img: "/Users/bou_harumi/Desktop/desktop-tower.jpg" },
         ];
 
     // 渲染商品
