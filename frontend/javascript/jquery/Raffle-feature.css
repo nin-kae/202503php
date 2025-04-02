@@ -1,40 +1,55 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f43f3b; 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 table {
-    border-spacing: 0; /*让边框之间间距为0*/
-    border-collapse: collapse; /*让边框之间合并成一个*/
+    border-spacing: 10px; /*让边框之间间距*/
+    border-collapse: separate; 
     text-align: center;
+    margin: 0 auto;
 }
 
-.draw {
-    width: 460px;
-    height: 470px;
-    margin: 0 auto;
-    padding: 40px;
-    background: url(/Users/bou_harumi/Desktop/xiaoba.jpg);
+.draw td {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.draw td:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .draw .item {
-    width: 150px;
-    height: 150px;
-    background: url(/Users/bou_harumi/Desktop/xiaoba.jpg);
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
 }
 
-.draw .item.active {
-    background: url(/Users/bou_harumi/Desktop/xiaoba.jpg);
+.draw .lottery-btn {
+    background: yellow;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+    border: 2px solid red;
 }
 
-.draw .img img{
-    vertical-align: top;
-}
-
-.draw .gap {
-    width: 5px;
-}
-
-.draw .gap-2 {
-    width: 5px;
+.draw .active {
+    border: 4px solid #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
 }
