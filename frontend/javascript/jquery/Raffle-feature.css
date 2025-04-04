@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #f43f3b; 
+    /* background: #f43f3b;  */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -13,7 +13,7 @@ body {
     width: 350px;
     margin: 50px auto;
     padding: 10px;
-    background: #f43f3b;
+    /* background: #f43f3b; */
     border-radius: 12px;
   }
 
@@ -27,7 +27,7 @@ table {
     width: 100px;
     height: 100px;
     border-radius: 12px;
-    background: #fff;
+    /* background: #fff; */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     vertical-align: middle;
     text-align: center;
@@ -36,6 +36,10 @@ table {
     color: #333;
     transition: all 0.2s ease;
     padding: 4px;
+}
+
+.name {
+    color: rgb(243, 233, 215);
 }
 
 .draw td:hover {
@@ -50,12 +54,22 @@ table {
 
 .lottery-btn {
     background: yellow;
-    color: red;
+    /* color: red; */
+    font-size: 20px;
+    border: 2px solid yellow;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+.lottery-unit {
+    background: red;
+    /* color: red; */
     font-size: 20px;
     border: 2px solid red;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
 }
+
 
 .active {
     border: 3px solid #ff0000;
