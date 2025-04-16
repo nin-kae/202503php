@@ -129,7 +129,7 @@ function showMessage($message, $name = "游客") {
 showMessage("终于到啦！"); // 使用默认参数值
 showMessage("欢迎来到游乐园！", "导游"); // 使用自定义参数值
 
-// 按值传递
+// 按值传递 （保护数据）
 function incrementValue($number) {
     $number++; // 修改的是函数内部的副本 $number
     echo "函数内部的值：" . $number . "\n";
@@ -144,7 +144,7 @@ echo "函数外部的值：" . $value . "\n"; // $value 输出为5
  * 函数外部的值：5
  */
 
-// 引用传递 &
+// 引用传递 & （直接更新用户设置，重置状态，追加数据）
 function incrementReference(&$number) {
     $number++; // 修改的是函数内部的引用 $number
     echo "函数内部的值：" . $number . "\n";
