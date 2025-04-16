@@ -105,3 +105,56 @@ function createUser(string $username, string $email, bool $isActive = true, bool
 
 $name = "ninkae";
 createUser(username: $name, email: 'renhuaying0401@gmail.com', isAdmin: 1);
+
+
+// 用 retrun 返回多个值。一旦执行到 return 语句，函数就会立即停止执行，并返回指定的值
+function getUserInfo($id) {
+    $name = "张三";
+    $age = 25;
+    return [
+        'name' => $name,
+        'age' => $age
+    ]; // 返回一个包含多个信息的数组
+}
+
+$userInfo = getUserInfo(1);
+echo "用户名：" . $userInfo['name'] . "，年龄：" . $userInfo['age'] . "<br>";
+
+// 默认参数值
+
+function showMessage($message, $name = "游客") {
+    echo $name . "说：" . $message . "\n";
+}
+
+showMessage("终于到啦！"); // 使用默认参数值
+showMessage("欢迎来到游乐园！", "导游"); // 使用自定义参数值
+
+// 按值传递
+function incrementValue($number) {
+    $number++; // 修改的是函数内部的副本 $number
+    echo "函数内部的值：" . $number . "\n";
+}
+
+$value = 5;
+incrementValue($value); // 传递的是 $value 的副本，然后复制给 $number
+echo "函数外部的值：" . $value . "\n"; // $value 输出为5
+
+/**
+ * 函数内部的值：6
+ * 函数外部的值：5
+ */
+
+// 引用传递 &
+function incrementReference(&$number) {
+    $number++; // 修改的是函数内部的引用 $number
+    echo "函数内部的值：" . $number . "\n";
+}
+
+$value = 10;
+incrementReference($value); // 将 $value 的引用传递给 $number
+echo "函数外部的值：" . $value . "\n"; // $value 输出为11
+
+/**
+ * 函数内部的值：11
+ * 函数外部的值：11
+ */
