@@ -39,7 +39,7 @@ $userAvatar ??= 'default.png'; // 如果 $userAvatar 不存在，则赋值为 'd
 echo $userAvatar; // 输出：default.png
 echo "<br>";
 
-// 条件语句
+// 条件语句 （if...else语句）
 $age = 20;
 if ($age >= 18) {
     echo "成年";
@@ -109,6 +109,29 @@ while ($i < 5) { // 条件判断在循环开始前
 //     echo "无线循环\n";
 //     break; // 这里是为了防止死循环
 // }
+
+//do... while 循环
+$attempts = 0;
+$success = false;
+
+do {
+    $attempts++;
+    echo "尝试第 " . $attempts . " 次链接...\n";
+    // 假设 connection_attempt() 返回 true 或 false
+    // $success = connection_attempt();
+    if ($attempts >= 5) { // 模拟链接成功或达到最大尝试次数
+        if (rand(0,1)){
+            $success = true; // 模拟成功
+            echo "链接成功！\n";
+        } elseif ($attempts >= 5) {
+            echo "达到最大尝试次数，链接失败！\n";
+            break; // 达到最大尝试次数，跳出循环
+        }
+    }
+    //if (!$success) sleep(1); // 如果没有成功，等待1秒再尝试
+    } while (!$success); // 只要 $success 为 false，就继续循环
+echo "总共尝试了 " . $attempts . " 次链接。\n";
+echo "<br>";
 
 // foreach 循环
 $fruits = ['apple', 'banana', 'orange'];
