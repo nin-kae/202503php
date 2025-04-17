@@ -27,29 +27,56 @@ echo "<br>";
 echo mb_strlen("こんにちは朝日"); // 输出：７
 echo "<br>";
 
+// 查找与搜索子字符串
 $string = "Hello World, hello PHP!";
-$find = "hello";
+$find = "hello"; // 查找子字符串
 
-$pose1 = strpos($string, $find); // 从头开始找，区分大小写，找不到“hello”返回 false
-if ($pos1 === false) {
-    echo "'$find' ont found (case-sensitive).\n";
+$pos1 = strpos($string, $find); // 查找子字符串在大字符串中第一次出现的位置的函数
+if ($pos1 === false) { 
+    echo "'$find' ont found (case-sensitive).\n"; // case-sensitive 是区分大小写的术语
 } else {
-    echo "'$find' found ai index: $pos1\n";
+    echo "'$find' found at index: $pos1\n"; // 输出：‘hello’ found at index: 13
 }
 echo "<br>";
 
-$findUpper = "Hello";
+$findUpper = "Hello"; // 自定义函数 Upper 是大写的意思
 $pos2 = strpos($string, $findUpper); // 找到了 “Hello”
-if ($pos2 !== false) {
+if ($pos2 !== false) { // !== 值不相等 或者 类型不一样
     echo "'$findUpper' found at index: $pos2\n"; // 输出：‘Hello’ found at index: 0
 }
 echo "<br>";
 
-// 错误用法示例
-if (strpose($string, $findUpper) === false) { // 错误：$pos2 为 0 时，0 == false，
-    echo "判断错误：'$findUpper' not found.\n";
+// stripos 的使用，与 strpos 的功能一样，但不区分大小写
+$pos3 = stripos($string, $find);
+if ($pos3 !== false) {
+    echo "'$find' " . "found at index (case-insensitive): $pos3\n"; // 输出：'hello' found at index (case-insensitive): 0
 }
 echo "<br>";
+
+// 查找子字符串 最后一次 出现的位置 使用 strrpos 与 strripos
+$string1 = "Hello World, hello PHP, Hello tokyo, hello Japan";
+$find1 = "hello"; // 查找子字符串
+
+// strrpos 区分大小写
+$findUpper1 = "Hello";
+$lastPos = strrpos($string1, $findUpper1); // 找最后一个 "Hello",(区分大小写)
+if ($lastPos !== false) {
+    echo "Last '$findUpper' found at index: $lastPos\n"; // 输出: Last 'hello' found at index (case-insensitive): 24
+}
+echo "<br>";
+
+// strripos 不区分大小写
+$lastPos = strripos($string1, $find1); // 找最后一个 "hello",(区分大小写)
+if ($lastPos !== false) {
+    echo "Last '$find' found at index (case-insensitive): $lastPos\n"; // 输出: Last 'hello' found at index (case-insensitive): 37
+}
+echo "<br>";
+
+// 错误用法示例
+// if (strpose($string, $findUpper) === false) { // 错误：$pos2 为 0 时，0 == false，
+//     echo "判断错误：'$findUpper' not found.\n";
+// }
+// echo "<br>";
 
 // 从第七个字符开始找
 $pos3 = strpos($string, $find, 7); // 从第七个字符开始找
@@ -65,8 +92,11 @@ if ($lastPos !== false) {
 echo "<br>";
 
 $email = "renhuaying0401@gmail.com";
-$domain = substr($email, '@'); // 从 @ 后面开始截取
+$domain = strstr($email, '@'); // 从 @ 后面开始截取
 echo $domain . "<br>"; // 输出：gmail.com
+
+$user = strstr($email, '@', true); // 第三个参数为 true
+echo $user . "<br>"; // 输出：renhuaying0401
 
 $url = "https://www.example.com";
 if (str_contains($url, "example")) {
@@ -74,10 +104,10 @@ if (str_contains($url, "example")) {
 }
 
 if (str_starts_with($url, "https://")) {
-    echo "URL uses HTTPS.<br>"; // 输出：URL starts with 'https'.
+    echo "URL uses HTTPS.\n"; // 输出：URL starts with 'https'.
 }
 
 $filename = "document.pdf";
 if (str_ends_with($filename, ".pdf")) {
-    echo "File is a PDF.<br>"; // 输出：File is a PDF.
+    echo "File is a PDF.\n"; // 输出：File is a PDF.
 }
