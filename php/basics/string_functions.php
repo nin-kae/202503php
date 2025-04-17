@@ -260,6 +260,7 @@ $urlPath = "https://example.com/files/" . rawurlencode($path);
 echo "\n" . $urlPath; // 输出：https://example.com/files/%E6%96%87%E4%BB%B6%20%E5%90%8D.txt
 echo "<br>";
 parse_str('key1=value1&key2=value2', $result); // 将查询字符串解析为数组
+// var_dump 内置函数；用来查看一个变量的类型和值的。
 var_dump($result);
 echo "<br>";
 $params = [
