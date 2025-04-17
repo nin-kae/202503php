@@ -241,5 +241,47 @@ echo "<br>";
 // 递归函数
 #todo
 
+$tree = [
+    'name' => 'root',
+    'children' => [
+        [
+            'name' => 'folder1',
+            'children' => [
+                [
+                    'name' => 'folder1-1',
+                    'children' => []
+                ],
+            ]
+        ],
+        [
+            'name' => 'folder2'
+        ]
+    ]
+];
 
+// 获取文件夹点深度
 
+// $param arry $node 当前节点
+// $param int 当前深度
+
+function getTreedepth($node) {
+    // isset 判断变量是否存在，且值不是 null； !isset 判断变量是否不存在，或者值是 null
+    // || 的意思是：或（or）
+    // empty 判断这个变量是不是 null
+    if (!isset($node['children']) || empty($node['children'])) {
+        return 1; // 如果没有子节点，返回深度 1
+    }
+
+    $maxChildDepth = 0; // 如果有子节点，初始化最大深度为 0
+    // foreach 逐个访问数组中的每一项（元素）
+    foreach ($node['children'] as $child) {
+        $childDepth = getTreedepth($child); // 递归调用
+        if ($childDepth > $maxChildDepth) {
+            $maxChildDepth = $childDepth; // 更新最大深度
+        }
+    }
+    return $maxChildDepth + 1; // 返回当前节点的深度 // +1 是因为 root 也算一个深度
+}
+
+echo getTreedepth($tree); // 输出：3
+echo "<br>";
