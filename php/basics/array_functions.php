@@ -242,32 +242,140 @@ echoWithBr(json_encode($usersData));
 // 需要渲染的字符串 The next F1 race will be in {{ city }} on {{ date }}.
 // 给定的变量值 ['city' => 'Melbourne', 'date' => '2022-04-08']
 // 执行结果 The next F1 race will be in Melbourne on 2022-04-08.
-///
+
 // ['city' => 'Melbourne', 'date' => '2022-04-08', 'weather' => '晴天']
-// The next F1 race will be in {{ city }} on {{ date }} ssas {{ weather }}.
+// The next F1 race will be in {{ city }} on {{ date }} as {{ weather }}.
 
-// 用 简单变量 输出
-$city = 'Melbourne';
-$date = '2022-04-08';
-// $weather = '晴天';
-echo "The next F1 race will be in $city on $date.";
-echo "<br>";
+// // 用 简单变量 输出
+// $city = 'Melbourne';
+// $date = '2022-04-08';
+// // $weather = '晴天';
+// echo "The next F1 race will be in $city on $date.";
+// echo "<br>";
 
-// 用 str_replace 代替
-$string = "The next F1 race will be in city on date.";
-$string = substr_replace($string, "Melbourne", 28, 4);
-echo substr_replace($string, "2022-04-08", 41, 4);
-echo "<br>";
+// // 用 str_replace 代替
+// $string = "The next F1 race will be in city on date.";
+// $string = substr_replace($string, "Melbourne", 28, 4);
+// echo substr_replace($string, "2022-04-08", 41, 4);
+// echo "<br>";
 
-// sprintf 格式化字符串
-$weather = "晴天";
-$result = sprintf("The next F1 race will be in %s on %s ssas %s.", $city, $date, $weather);
+// // sprintf 格式化字符串
+// $weather = "晴天";
+// $result = sprintf("The next F1 race will be in %s on %s ssas %s.", $city, $date, $weather);
+// echo $result;
+// echo "<br>";
+
+// // 匿名函数
+// $greet = function($city, $date, $weather) {
+//     echo "The next F1 race will be in " . $city . " on " . $date . " ssas " . $weather . ".<br>";
+// };
+// $greet('Melbourne', '2022-04-08', '晴天');
+// echo "<br>";
+
+// search & str_replace
+$string = "The next F1 race will be in {{ city }} on {{ date }} as {{ weather }}.";
+$values = [ 'city' => 'Melbourne', 'date' => '2022-04-08', 'weather' => '晴天'];
+
+$search = [];
+$replace = [];
+foreach ($values as $item => $value) {
+    $search[] = "{{ $item }}";
+    $replace[] = $value;
+}
+
+$result = str_replace($search, $replace, $string);
 echo $result;
-echo "<br>";
 
-// 匿名函数
-$greet = function($city, $date, $weather) {
-    echo "The next F1 race will be in " . $city . " on " . $date . " ssas " . $weather . ".<br>";
-};
-$greet('Melbourne', '2022-04-08', '晴天');
-echo "<br>";
+// 计算数组元素的和
+$sum = array_reduce($numbers, fn($carry, $item) => $carry + $item, 0); // 初始值为 0
+echoWithBr("Sum: " . $sum); // 输出：Sum： 15
+
+// 将数组元素连接成字符串
+$string = array_reduce($numbers, fn($carry, $item) => $carry . "_" . $item, "Numbers:"); // 初始值为 "Number:"
+echoWithBr("\nString: " . $string); // 输出：String：Numbers:-1-2-3-4-5
+
+echoHr();
+$fruits = ['a' => 'apple', 'b' => 'banana'];
+
+// 打印每个元素
+array_walk($fruits, function($value, $key) {
+    echoWithBr($key . "=>" . $value . "\n");
+});
+
+// 修改数组元素（注意 &）
+$numbers = [1, 2, 3];
+array_walk($numbers, function(&$value) {
+    $value *= 10;
+});
+printRWithBr($number); // 输出：Array ( [0] => 10 [1] => 20 [2] => 30 )
+
+echoHr();
+$numbers = [3, 1, 4, 1, 5, 9];
+sort($numbers);
+printRWithBr($numbers); // 输出：Array ( [0] => 1 [1] => 1 [2] => 3 [3] => 4 [4] => 5 [5] => 9 )(键被重置)
+rsort($numbers);
+printRWithBr($numbers); // 输出：Array ( [0] => 9 [1] => 5 [2] => 4 [3] => 3 [4] => 1 [5] => 1 )(键被重置)
+$scores = ['Alice' => 85, 'Bob' => 92, 'Charlie' => 78];
+asort($scores); // 按分数生序，保留名字键
+printRWithBr($scores); // 输出
+arsort($scores); // 按分数降序
+printRWithBr($scores); // 输出
+$files = ['img12.png', 'img10.png', 'img2.png', 'img1.png'];
+natsort($files); // 自然排序
+printRWithBr($files); // 输出：Array ( [0] => a [1] => b [3] = c )
+
+$array1 = ["a" => "green", "red", "blue", "red"];
+$array2 = ["b" => "green", "yellow", "red"];
+
+$diff = array_diff($array1, $array2);
+printRWithBr($diff); // 输出：Array ( [1] => blue )( 'green' 和 'red' 在 $array2 中也存在)
+
+$intersect = array_intersect($array1, $array2);
+print_r($intersect); // 输出：Array ( [a] => green, [b] => )
+
+// 转换为整数
+settype($value, "ingeter");
+echoWithBr("转换为 int 后：" . gettype($value) . ", 值：");
+varDumpWithBr($value); // integer, int(123)(小数部分截断)
+echoWithBr("<br>");
+
+echoHr();
+$value = "123.45"; // 初始是字符串
+varDumpWithBr(intval($value)); // 转换为整数
+varDumpWithBr((int)$value); // 转换为整数
+varDumpWithBr((float)$value); // 转换为浮点数
+
+echoHr();
+varDumpWithBr(empty($student));
+// if (!empty($student)) {
+//      todo something
+// }
+$classes = [
+    'class1' => ['student1', 'student2'],
+    'class2' => ['student3', 'student4'],
+];
+unset($classes['class1']); // 删除 class1
+varDumpWithBr($classes); // class2 => student3,student4
+
+echoHr();
+$pi = 3.1415926;
+echoWithBr(round($pi, 2)); // 四舍五入保留两位小数，输出：3.14
+echoWithBr(round($pi, 3)); // 四舍五入保留三位小数，输出：3.142
+
+echoWithBr(mt_rand(1, 100)); // 输出：随机数，1 到 100 之间
+
+try {
+    $password = random_int(100000, 999999) . bin2hex(random_bytes(10));
+} catch (RandomException $e) {
+    echo "生成随机密码失败：" . $e -> getMessage();
+    exit;
+}
+echoWithBr($password); // 输出：随机密码，10 位随机字符串
+
+echoHr();
+echoWithBr(time()); // 输出：当前时间戳，当前时间戳就是从 Unix 纪元 (1970 年 1 月 1 日 00:00:00 GMT) 到现在的秒数
+echoWithBr(microtime(true)); // 输出：当前时间戳，包含微妙
+echoWithBr("请求开始时间(秒)：" . ($_SERVER['REQUEST_TIME'] ?? 'N/A') . "\n");
+echoWithBr("请求开始时间(带微妙)：" . ($_SERVER['REQUEST_TIME_FLOAT'] ?? 'N/A') . "\n");
+echoWithBr(date("L", strtotime(date('Y-m-d', strtotime('-1year')))));
+
