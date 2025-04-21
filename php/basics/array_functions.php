@@ -245,3 +245,29 @@ echoWithBr(json_encode($usersData));
 ///
 // ['city' => 'Melbourne', 'date' => '2022-04-08', 'weather' => '晴天']
 // The next F1 race will be in {{ city }} on {{ date }} ssas {{ weather }}.
+
+// 用 简单变量 输出
+$city = 'Melbourne';
+$date = '2022-04-08';
+// $weather = '晴天';
+echo "The next F1 race will be in $city on $date.";
+echo "<br>";
+
+// 用 str_replace 代替
+$string = "The next F1 race will be in city on date.";
+$string = substr_replace($string, "Melbourne", 28, 4);
+echo substr_replace($string, "2022-04-08", 41, 4);
+echo "<br>";
+
+// sprintf 格式化字符串
+$weather = "晴天";
+$result = sprintf("The next F1 race will be in %s on %s ssas %s.", $city, $date, $weather);
+echo $result;
+echo "<br>";
+
+// 匿名函数
+$greet = function($city, $date, $weather) {
+    echo "The next F1 race will be in " . $city . " on " . $date . " ssas " . $weather . ".<br>";
+};
+$greet('Melbourne', '2022-04-08', '晴天');
+echo "<br>";
