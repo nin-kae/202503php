@@ -239,4 +239,9 @@ $usersData = array_map(function ($user) {
 }, $users);
 echoWithBr(json_encode($usersData));
 
-
+// 需要渲染的字符串 The next F1 race will be in {{ city }} on {{ date }}.
+// 给定的变量值 ['city' => 'Melbourne', 'date' => '2022-04-08']
+// 执行结果 The next F1 race will be in Melbourne on 2022-04-08.
+///
+// ['city' => 'Melbourne', 'date' => '2022-04-08', 'weather' => '晴天']
+// The next F1 race will be in {{ city }} on {{ date }} ssas {{ weather }}.
