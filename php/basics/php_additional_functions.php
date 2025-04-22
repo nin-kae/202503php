@@ -46,7 +46,7 @@ echoWithBr("<br>");
 
 // 转换为整数
 // ingeter 是整数类型
-settype($value, "ingeter");
+settype($value, "integer");
 echoWithBr("转换为 int 后：" . gettype($value) . ", 值：");
 varDumpWithBr($value); // integer, int(123)(小数部分截断)
 echoWithBr("<br>");
