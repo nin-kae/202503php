@@ -251,7 +251,7 @@ printRWithBr($notEmpty); // 输出 Array ( [1] => 1 [3] => 1 [5] => hello ) (tru
 
 $assoc = ['a' => 1, 'b' => 2, 'c' => 3];
 // 过滤掉键名不是 'a' 的元素
-$onlyA = arry_filter($assoc, fn($key) => $key === 'a', ARRAY_FILTER_USE_KRY);
+$onlyA = array_filter($assoc, fn($key) => $key === 'a', ARRAY_FILTER_USE_KEY);
 printRWithBr($onlyA); // 输出：Array ( [a] => 1 )
 
 // 需要渲染的字符串 The next F1 race will be in {{ city }} on {{ date }}.
@@ -369,50 +369,4 @@ printRWithBr(array_flip($scores)); // 输出: Array ( [85] => Alice [92] => Bob 
 $numbers = [3, 1, 4, 1, 5, 9];
 // 返回一个顺序相反的数组（倒序排列）
 printRWithBr(array_reverse($numbers)); // 输出: Array ( [0] => 9 [1] => 5 [2] => 4 [3] => 3 [4] => 1 [5] => 1 ) (键被重置)
-
-// 转换为整数
-settype($value, "ingeter");
-echoWithBr("转换为 int 后：" . gettype($value) . ", 值：");
-varDumpWithBr($value); // integer, int(123)(小数部分截断)
-echoWithBr("<br>");
-
-echoHr();
-$value = "123.45"; // 初始是字符串
-varDumpWithBr(intval($value)); // 转换为整数
-varDumpWithBr((int)$value); // 转换为整数
-varDumpWithBr((float)$value); // 转换为浮点数
-
-echoHr();
-varDumpWithBr(empty($student));
-// if (!empty($student)) {
-//      todo something
-// }
-$classes = [
-    'class1' => ['student1', 'student2'],
-    'class2' => ['student3', 'student4'],
-];
-unset($classes['class1']); // 删除 class1
-varDumpWithBr($classes); // class2 => student3,student4
-
-echoHr();
-$pi = 3.1415926;
-echoWithBr(round($pi, 2)); // 四舍五入保留两位小数，输出：3.14
-echoWithBr(round($pi, 3)); // 四舍五入保留三位小数，输出：3.142
-
-echoWithBr(mt_rand(1, 100)); // 输出：随机数，1 到 100 之间
-
-try {
-    $password = random_int(100000, 999999) . bin2hex(random_bytes(10));
-} catch (RandomException $e) {
-    echo "生成随机密码失败：" . $e -> getMessage();
-    exit;
-}
-echoWithBr($password); // 输出：随机密码，10 位随机字符串
-
-echoHr();
-echoWithBr(time()); // 输出：当前时间戳，当前时间戳就是从 Unix 纪元 (1970 年 1 月 1 日 00:00:00 GMT) 到现在的秒数
-echoWithBr(microtime(true)); // 输出：当前时间戳，包含微妙
-echoWithBr("请求开始时间(秒)：" . ($_SERVER['REQUEST_TIME'] ?? 'N/A') . "\n");
-echoWithBr("请求开始时间(带微妙)：" . ($_SERVER['REQUEST_TIME_FLOAT'] ?? 'N/A') . "\n");
-echoWithBr(date("L", strtotime(date('Y-m-d', strtotime('-1year')))));
 
