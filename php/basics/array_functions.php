@@ -239,6 +239,21 @@ $usersData = array_map(function ($user) {
 }, $users);
 echoWithBr(json_encode($usersData));
 
+echoHr();
+$numbers = [1, 2, 3, 4, 5, 6];
+$even = array_filter($numbers, fn($n) => $n % 2 === 0);
+printRWithBr($even); // 输出： Array ( [1] => 2 [3] => 4 [5] => 6 ) (保留了键名 1, 3, 5)
+
+$mixed = [0, 1, false, true, "", "hello", null, []];
+// array_filter 用来过滤 notEmpty 的值
+$notEmpty = array_filter($mixed); // 省略回调，移除所有 falsey 值
+printRWithBr($notEmpty); // 输出 Array ( [1] => 1 [3] => 1 [5] => hello ) (true 被转为 1 输出)
+
+$assoc = ['a' => 1, 'b' => 2, 'c' => 3];
+// 过滤掉键名不是 'a' 的元素
+$onlyA = arry_filter($assoc, fn($key) => $key === 'a', ARRAY_FILTER_USE_KRY);
+printRWithBr($onlyA); // 输出：Array ( [a] => 1 )
+
 // 需要渲染的字符串 The next F1 race will be in {{ city }} on {{ date }}.
 // 给定的变量值 ['city' => 'Melbourne', 'date' => '2022-04-08']
 // 执行结果 The next F1 race will be in Melbourne on 2022-04-08.
@@ -287,6 +302,9 @@ $result = str_replace($search, $replace, $string);
 echo $result;
 
 // 计算数组元素的和
+echoHr();
+$numbers = [1, 2, 3, 4, 5];
+
 $sum = array_reduce($numbers, fn($carry, $item) => $carry + $item, 0); // 初始值为 0
 echoWithBr("Sum: " . $sum); // 输出：Sum： 15
 
@@ -294,10 +312,10 @@ echoWithBr("Sum: " . $sum); // 输出：Sum： 15
 $string = array_reduce($numbers, fn($carry, $item) => $carry . "_" . $item, "Numbers:"); // 初始值为 "Number:"
 echoWithBr("\nString: " . $string); // 输出：String：Numbers:-1-2-3-4-5
 
+// 打印每个元素
 echoHr();
 $fruits = ['a' => 'apple', 'b' => 'banana'];
 
-// 打印每个元素
 array_walk($fruits, function($value, $key) {
     echoWithBr($key . "=>" . $value . "\n");
 });
@@ -307,31 +325,50 @@ $numbers = [1, 2, 3];
 array_walk($numbers, function(&$value) {
     $value *= 10;
 });
-printRWithBr($number); // 输出：Array ( [0] => 10 [1] => 20 [2] => 30 )
+printRWithBr($numbers); // 输出：Array ( [0] => 10 [1] => 20 [2] => 30 )
 
 echoHr();
 $numbers = [3, 1, 4, 1, 5, 9];
+// sort 对数组进行排序 (按值从小到大)；rsort 则相反
 sort($numbers);
 printRWithBr($numbers); // 输出：Array ( [0] => 1 [1] => 1 [2] => 3 [3] => 4 [4] => 5 [5] => 9 )(键被重置)
-rsort($numbers);
+arsort($numbers);
 printRWithBr($numbers); // 输出：Array ( [0] => 9 [1] => 5 [2] => 4 [3] => 3 [4] => 1 [5] => 1 )(键被重置)
+// 应用：1.成绩排名
 $scores = ['Alice' => 85, 'Bob' => 92, 'Charlie' => 78];
 asort($scores); // 按分数生序，保留名字键
 printRWithBr($scores); // 输出
-arsort($scores); // 按分数降序
+rsort($scores); // 按分数降序
 printRWithBr($scores); // 输出
 $files = ['img12.png', 'img10.png', 'img2.png', 'img1.png'];
 natsort($files); // 自然排序
-printRWithBr($files); // 输出：Array ( [0] => a [1] => b [3] = c )
+printRWithBr($files); // 输出: Array ( [3] => img1.png [2] => img2.png [1] => img10.png [0] => img12.png ) (键保留)
+$input = ["a", "b", "a", "c", "b", "b"];
+// 从数组中移除重复的值，只保留唯一的元素
+$unique = array_unique($input);
+printRWithBr($unique); // 输出: Array ( [0] => a [1] => b [3] => c )
 
 $array1 = ["a" => "green", "red", "blue", "red"];
 $array2 = ["b" => "green", "yellow", "red"];
 
+// diff 差集
 $diff = array_diff($array1, $array2);
 printRWithBr($diff); // 输出：Array ( [1] => blue )( 'green' 和 'red' 在 $array2 中也存在)
 
 $intersect = array_intersect($array1, $array2);
-print_r($intersect); // 输出：Array ( [a] => green, [b] => )
+print_r($intersect); // 输出: Array ( [a] => green [0] => red [2] => red )
+
+$numbers = [1, 2, 3, 4.5];
+echoWithBr("Sum: " . array_sum($numbers)); // 输出：Sum: 10.5
+
+$input = ["a" => 1, "b" => 2, "c" => 3];
+// array_flip 将数组中的键和值互换
+$flipped = array_flip($input);
+printRWithBr($flipped); // 输出: Array ( [1] => a [2] => b [3] => c )
+printRWithBr(array_flip($scores)); // 输出: Array ( [85] => Alice [92] => Bob [78] => Charlie ) (分数作为键)
+$numbers = [3, 1, 4, 1, 5, 9];
+// 返回一个顺序相反的数组（倒序排列）
+printRWithBr(array_reverse($numbers)); // 输出: Array ( [0] => 9 [1] => 5 [2] => 4 [3] => 3 [4] => 1 [5] => 1 ) (键被重置)
 
 // 转换为整数
 settype($value, "ingeter");
