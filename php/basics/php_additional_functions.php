@@ -89,4 +89,5 @@ echoWithBr(time()); // 输出：当前时间戳，当前时间戳就是从 Unix 
 echoWithBr(microtime(true)); // 输出：当前时间戳，包含微妙
 echoWithBr("请求开始时间(秒)：" . ($_SERVER['REQUEST_TIME'] ?? 'N/A') . "\n");
 echoWithBr("请求开始时间(带微妙)：" . ($_SERVER['REQUEST_TIME_FLOAT'] ?? 'N/A') . "\n");
+//echoWithBr(date('Y-m-d', strtotime('-1 year')));
 echoWithBr(date("L", strtotime(date('Y-m-d', strtotime('-1year')))));
