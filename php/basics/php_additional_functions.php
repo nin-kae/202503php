@@ -69,11 +69,31 @@ $classes = [
 unset($classes['class1']); // 删除 class1
 varDumpWithBr($classes); // class2 => student3,student4
 
+// 绝对值
+// negative 负数，positive 正的 > 0 的数
+$negative_int = -10;
+$positive_float = 5.7;
+
+// abs 计算绝对值的数学函数
+$abs_int = abs($negative_int);     // $abs_int 的值是 10
+$abs_float = abs($positive_float);  // $abs_float 的值是 5.7
+
+echoWithBr("abs(-10) = " . $abs_int . "\n");   // 输出: abs(-10) = 10
+echoWithBr("abs(5.7) = " . $abs_float . "\n"); // 输出: abs(5.7) = 5.7
+
+// 幂，平方根
+$power = pow(2, 8);   // 2 的 8 次方
+echoWithBr("2^8 = " . $power . "\n"); // 输出: 256
+
+$sqrt_val = sqrt(144); // 144 的平方根
+echoWithBr("sqrt(144) = " . $sqrt_val . "\n"); // 输出: 12
+// 四舍五入 与 取整数
 echoHr();
 $pi = 3.1415926;
 echoWithBr(round($pi, 2)); // 四舍五入保留两位小数，输出：3.14
 echoWithBr(round($pi, 3)); // 四舍五入保留三位小数，输出：3.142
 
+// 生成随机数
 echoWithBr(mt_rand(1, 100)); // 输出：随机数，1 到 100 之间
 
 try {
