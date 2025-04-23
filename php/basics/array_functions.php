@@ -289,13 +289,16 @@ printRWithBr($onlyA); // 输出：Array ( [a] => 1 )
 
 // search & str_replace
 $string = "The next F1 race will be in {{ city }} on {{ date }} as {{ weather }}.";
-$values = [ 'city' => 'Melbourne', 'date' => '2022-04-08', 'weather' => '晴天'];
+$values = [ 'city' => 'Melbourne', 'date' => '2022-04-08'];
 
-$search = [];
+preg_match_all('/{{\s*(\w+)\s*}}/', $string, $matches);
+$search = $matches[0]; 
 $replace = [];
-foreach ($values as $item => $value) {
-    $search[] = "{{ $item }}";
-    $replace[] = $value;
+
+foreach ($matches[1] as $key) {
+    // $search[] = "{{ $key }}";
+    // $replace[] = $values[$key] ?? '';
+    $replace[] = $values[$key] ?? '';
 }
 
 $result = str_replace($search, $replace, $string);
