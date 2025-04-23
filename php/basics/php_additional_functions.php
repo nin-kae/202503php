@@ -119,7 +119,7 @@ $path2 = "C:\\Users\\John\\Documents\\report.pdf";
 $path3 = "myfile.txt"; // 只有文件名
 $path4 = "/etc/php/"; // 目录
 
-echo dirname($path); // 输出
+echo basename($path1); // 输出: logo.png
 echo "<br>";
 echo basename($path1, ".png"); // 输出: logo
 echo "<br>";
@@ -152,7 +152,7 @@ echoWithBr(DIRECTORY_SEPARATOR);
 echoHr();
 $file = './array_functions.php';
 $dir = '/Library/WebServer/Documents/202503php/php/basics/';
-if (file_exits(file)) {
+if (file_exists($file)) {
     echoWithBr("文件 $file 存在。");
 } else {
     echoWithBr("文件 $file 不存在。");
@@ -164,7 +164,7 @@ if (is_dir($dir)) {
     echoWithBr("文件 $file 不存在。");
 }
 
-if (is_file($files)) {
+if (is_file($file)) {
     echoWithBr("文件 $file 存在。");
 } else {
     echoWithBr("文件 $file 不存在。");
