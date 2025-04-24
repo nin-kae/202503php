@@ -14,6 +14,9 @@ body {
 
 label, .form-check-label, .form-label {
     color: #fff;
+    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
 }
 
 h1 {
