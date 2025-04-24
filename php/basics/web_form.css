@@ -30,7 +30,7 @@ h1 {
 }
 
 .btn-cartoon {
-    display: flex;
+    display: inline-flex; 
     align-items: center;
     justify-content: center;
 
