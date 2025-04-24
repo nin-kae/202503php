@@ -23,8 +23,44 @@ h1 {
     height: 100px;            /* 自定义高度 */
     font-size: 2.3rem;
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
     color: 	#fff;
     letter-spacing: 1px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-};
+}
+
+.btn-cartoon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #696969;
+    border: none;                     /* 去除黑框 */
+    border-radius: 30px;              /* 圆角越大越圆 */
+    padding: 5px 20px;               /* 增加内边距让按钮更高 */
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-cartoon:hover {
+    background-color: 	#ADD8E6;
+    transform: translateY(-2px);         /* 悬浮时微微跳起 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.paw-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+    animation: wiggle 1s infinite ease-in-out;
+    display: inline-block;
+}
+  
+  /* 可爱一点的小动画（轻微晃动） */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
