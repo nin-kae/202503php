@@ -5,15 +5,13 @@ require_once './helpers.php';
 // 开启会话
 session_start();
 
-setcookie ('username', 'ninkae', time() + 3600, '/');
+setcookie ('username', 'root', time() + 3600, '/');
 
 varDumpWithBr($_COOKIE['username']);
 
 // ？同源策略 
 // ？跨域请求
-// ？HTTP头字段
-
-// HTT
+// ？HTTP头字段 https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5
 
 // 跨域资源共享
 

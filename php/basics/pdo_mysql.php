@@ -4,11 +4,11 @@ require_once './helpers.php';
 
 // --- 连接信息 ---
 // MySQL DSN
-$dsn = "mysql:host=localhost;dbname=test_db;charset=utf8mb4";
+$dsn = "mysql:host=localhost;dbname=school;charset=utf8mb4";
 // 数据库用户名
 $username = "root";
 // 数据库密码 (!!! 不应硬编码在代码中，应使用配置文件或环境变量 !!!)
-$password = "123456"; // 替换成你的密码
+$password = "123456"; // 替换成自己的密码
 
 // --- PDO 连接选项 (推荐设置) ---
 $options = [
@@ -48,7 +48,7 @@ echoHr();
 // --- 使用 query() 执行 SELECT ---
 try {
     // 这个查询是固定的，没有用户输入，所以用 query() 相对安全
-    $sql = "SELECT id, name, age, grade FROM students WHERE status = 'active'";
+    $sql = "SELECT id, name, email, age, grade FROM students WHERE status = 'active'";
     $stmt = $pdo->query($sql); // 返回 PDOStatement 对象
     
     echo "<h4>Active Users:</h4>";
