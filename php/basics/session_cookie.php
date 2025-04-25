@@ -21,7 +21,7 @@ $_SESSION['user_id'] = 123;
 $_SESSION['username'] = 'Alice';
 $_SESSION['login_time'] = time();
 $_SESSION['preferences'] = ['theme' => 'dark', 'lang' => 'zh'];
-echo "Session 数据已设置。<br>"
+echo "Session 数据已设置。<br>";
 
 // 读取数据
 if (isset($_SESSION['username'])) {
@@ -39,4 +39,3 @@ $_SESSION['preferences']['lang'] = 'en_US';
 
 // 删除单个session变量
 unset($_SESSION['login_time']);
-
