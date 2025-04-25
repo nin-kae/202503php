@@ -87,6 +87,7 @@ echoWithBr("2^8 = " . $power . "\n"); // 输出: 256
 
 $sqrt_val = sqrt(144); // 144 的平方根
 echoWithBr("sqrt(144) = " . $sqrt_val . "\n"); // 输出: 12
+
 // 四舍五入 与 取整数
 echoHr();
 $pi = 3.1415926;
@@ -249,6 +250,7 @@ $html = "<b>bold text</b> and <i>italic text</i>";
 // 贪婪模式 (.* 匹配尽可能多的字符)
 preg_match('/<b>(.*)</b>/', $html, $matches_greedy);
 print_r($matches_greedy); // 输出: [0 => 'bold text and italic text', 1 => 'bold text and italic text']
+echoHr();
 
 // 懒惰模式 (.? 匹配尽可能少的字符，直到遇到第一个 )
 preg_match('/<b>(.?)</b>/', $html, $matches_lazy);
@@ -280,6 +282,7 @@ if (preg_match($pattern, $email, $matches)) {
         // 如果 preg_match 返回 0 或 false
         echo "无效的 Email 地址格式。\n";
 }
+echoHr();
 
 $text = "访问我们的网站 https://www.example.com 或查看 ftp://files.example.org/data.zip";
 
@@ -327,7 +330,7 @@ $markdown = "这是一个链接 [PHP官网](https://www.php.net) 和另一个 [�
 // (      : 匹配左括号
 // (.?)   : 捕获 https://www.google.com/search?q=URL (非贪婪)
 // )      : 匹配右括号
-$pattern = '/([\b+])((.?))/u';
+$pattern = '/([\b+])((\.?))/u';
 
 // 定义回调函数
 $callback = function($matches) {
@@ -340,3 +343,10 @@ $callback = function($matches) {
     // 返回 HTML 链接标签
     return '<a href="' . $url . '" target="_blank">' . $text . '</a>';
 };
+
+// 执行替换
+$html = preg_replace_callback($pattern, $callback, $markdown);
+
+echo "Markdown: " . htmlspecialchars($markdown) . "\n<br>";
+echo "HTML: " . htmlspecialchars($html) . "\n<br>"; // 查看源码
+echo "渲染效果: " . $html . "\n"; // 在浏览器查看效果

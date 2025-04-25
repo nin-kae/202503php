@@ -10,9 +10,6 @@ echo "<br>";
 echo "「你好」所占的字节数是：" . strlen("你好"); // 输出：6
 echo "<br>";
 
-mb_strlen("你好"); // 输出：2
-echo "<br>";
-
 // mb_strlen(string $string, ?string $encoding = null): int
 // 获取字符串的长度，支持多字节字符集
 // mb_strlen() 函数用于获取字符串的长度，支持多字节字符集（如 UTF-8）。
@@ -46,12 +43,11 @@ if ($pos2 !== false) { // !== 值不相等 或者 类型不一样
 }
 echo "<br>";
 
-// stripos 的使用，与 strpos 的功能一样，但不区分大小写
-$pos3 = stripos($string, $find);
-if ($pos3 !== false) {
-    echo "'$find' " . "found at index (case-insensitive): $pos3\n"; // 输出：'hello' found at index (case-insensitive): 0
-}
-echo "<br>";
+// 错误用法示例
+//if (strpos($string, $findUpper) == false) { // 错误！当 $pos2 为 0 时， 0 == false 为 true！
+//    echo "错误判断：'$findUpper' not found.\n"; // 这句会意外执行
+//}
+//echo "<br>";
 
 // 查找子字符串 最后一次 出现的位置 使用 strrpos 与 strripos
 $string1 = "Hello World, hello PHP, Hello tokyo, hello Japan";
@@ -79,6 +75,7 @@ echo "<br>";
 // echo "<br>";
 
 // 从第七个字符开始找
+// stripos 的使用，与 strpos 的功能一样，但不区分大小写
 $pos3 = strpos($string, $find, 7); // 从第七个字符开始找
 if ($pos3 !== false) {
     echo "从索引 7 开始，'$find' found at index: $pos3\n"; // 输出：‘hello’ found at index: 13
@@ -109,7 +106,7 @@ if (str_starts_with($url, "https://")) {
 
 $filename = "document.pdf";
 if (str_ends_with($filename, ".pdf")) {
-    echo "File is a PDF.\n"; // 输出：File is a PDF.
+    echo "File is a PDF.<br>";; // 输出：File is a PDF.
 }
 
 // 替换字符串
@@ -219,6 +216,7 @@ $keywordsArr = ["黑色", "足球鞋", "男款"];
 $keywordsStr = implode(',', $keywordsArr); // 将数组转换为字符串
 echo $keywordsStr; // 输出：黑色,足球鞋,男款
 echo "<br>";
+
 //互为逆操作
 $productSearchKeywordsArr = ['黑色', '足训鞋', '真皮', '亚瑟士', '足球鞋'];
 $searchCondition = "黑色足球鞋男款";
@@ -235,6 +233,7 @@ echo'&nbsp;你好 ';
 echo "<br>";
 echo "<h1>这是一个 h1 标签</h1>";
 echo "&lt;h1&gt;这是一个 h1 标签&lt;/h1&gt;";
+echo "<br>";
 // echo "<script>alert('你的网站被我黑了！')</script>";
 // 把特殊的 HTML 字符转换成“安全的实体符号”
 // 这样可以防止 HTML 被浏览器当作代码执行，常用于防止 XSS 攻击（跨站脚本攻击

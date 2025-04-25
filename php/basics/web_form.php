@@ -74,3 +74,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Email: $email<br>";
     echo "Age: $age<br>";
 }
+
+// cURL 请求
+// 目标 URL
+$url = "https://www.php.net/"; // 使用 https：//www.php.net/ 或其他可访问地址测试
+
+// 1.初始化 cURL 会话
+$ch = curl_init();
+
+// 2. 设置选项
+// 设置要获取的 URL
+
+// 自己按照文档尝试一下使用 cURL 发起 POST 请求，到我们自己本机到 PHP 服务器上
+// 需要一个页面来接收你的 cURL 请求，你接收到请求之后返回一个 JSON 字符串给你的 cURL 请求，
+
