@@ -151,6 +151,26 @@ class Dog extends Animal
     {
         return self::$species;
     }
+
+    // __call 调用一个不存在的方法时自动触发
+    public function __call($name, $arguments)
+    {
+        echo "你调用了一个不存在的方法：$name, 参数是：" . implode(", ", $arguments) . "<br>";
+    }
+
+    // __get 访问一个不存在的属性时自动触发
+    private $hidden = "我是隐藏的秘密";
+    public function __get($name){
+        echo "试图访问不存在或不可见的属性：$name<br>";
+        return "默认返回值";
+    }
+
+    // __set($name, $value)
+    private $data = [];
+    public function __set($name, $value) {
+        echo "你给不存在的值 $name 赋了值：$value<br>";
+        $this->data[$name] = $value; // 动态存到内部数组
+    }
 }
 
 $luckyDog = new Dog("lucky", 3);
@@ -167,6 +187,12 @@ echoWithBr("这是 LuckyDog 的物种1: " . $luckyDog::$species);
 
 echoWithBr("这是 LuckDog 的物种2: " . $luckyDog::getSelfStaticProp());
 
+$dog = new Dog("wangcai", 2);
+$dog->bark('loudiy', 4); // bark()方法不存在，所以自动触发 __call
+$dog1 = new Dog("tiedan", 5);
+echo $dog1->secrect . "<br>"; // secret属性不存在，触发 __get
+$dog2 = new Dog("niuniu", 3);
+$dog2->color = "black"; // color属性不存在，触发 __set
 echoHr();
 
 // 事例化一个对象
@@ -201,4 +227,13 @@ echoWithBr("我们 Car 这个类型里面的车辆都是通过内燃机来驱动
 // __construct() 是类的构造函数, 当我们创建一个对象的时候, PHP 会自动调用这个函数
 // 在 PHP 中有很多 __ 开头的函数, 例如: `__destruct()`、`__call()`、`__get()`、`__set()` 等等, 这些函数都是 PHP 内置的魔术方法, 用来实现一些特殊的功能
 // 还有一些以 __ 开头的变量, 例如: `__FILE__`、`__LINE__`、`__CLASS__` 等等, 这些变量也是 PHP 内置的魔术变量, 用来获取一些特殊的信息
+
+class Cat {
+    public function __destruct() {
+        echo "Cat 对象被销毁了<br>";
+    }
+}
+
+$cat = new Cat ();
+echoHr ("程序结束<br>"); // 结束后，PHP自动调用了 $cat 的 __destruct()
 
