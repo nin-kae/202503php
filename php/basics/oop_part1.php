@@ -171,6 +171,11 @@ class Dog extends Animal
         echo "你给不存在的值 $name 赋了值：$value<br>";
         $this->data[$name] = $value; // 动态存到内部数组
     }
+
+    // __CLASS__
+    public function showClassName() {
+        echo __CLASS__;
+    }
 }
 
 $luckyDog = new Dog("lucky", 3);
@@ -193,6 +198,7 @@ $dog1 = new Dog("tiedan", 5);
 echo $dog1->secrect . "<br>"; // secret属性不存在，触发 __get
 $dog2 = new Dog("niuniu", 3);
 $dog2->color = "black"; // color属性不存在，触发 __set
+$dog->showClassName();
 echoHr();
 
 // 事例化一个对象
@@ -237,3 +243,5 @@ class Cat {
 $cat = new Cat ();
 echoHr ("程序结束<br>"); // 结束后，PHP自动调用了 $cat 的 __destruct()
 
+echo __FILE__;
+echo __LINE__;
