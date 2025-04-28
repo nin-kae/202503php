@@ -5,7 +5,7 @@ require_once './helpers.php';
 // 开启会话
 session_start();
 
-setcookie ('username', 'root', time() + 3600, '/');
+setcookie('username', 'root', time() + 3600, '/');
 
 varDumpWithBr($_COOKIE['username']);
 

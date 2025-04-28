@@ -55,14 +55,15 @@ try {
     echo "<ul>";
     // 遍历 PDOStatement 对象获取结果 (稍后详细讲 fetch)
     foreach ($stmt as $row) {
-        echo "<li>" . htmlspecialchars($row['name']) . " (" . htmlspecialchars($row['email']) . ")</li>";
+        echo "<li>" . "ID: " . htmlspecialchars($row['id']) . "; " .  htmlspecialchars($row['name']) . " (" . htmlspecialchars($row['email']) . ") </li>";
+        echo "Age: " . htmlspecialchars($row['age']) . "; Grade: " . htmlspecialchars($row['grade']);
     }
     echo "</ul>";
 } catch (PDOException $e) {
     echo "查询失败: " . $e->getMessage();
 }
     
-// --- 使用 exec() 执行 UPDATE ---
+// --- 使用 execl() 执行 UPDATE ---
 try {
     // 这个 UPDATE 也是固定的
     $sql = "UPDATE products SET price = price * 1.1 WHERE category = 'books'";
