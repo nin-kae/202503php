@@ -146,45 +146,42 @@ class ElectronicsProduct extends Product
         parent::__construct($name); // 调用 Shape 的构造函数设置产品信息
     }
 
-    public function show(int $id): mixed
+    public function show(int $id): string
     {
-        return (object)['id' => $id, 'name' => $this->name, 'type' => 'circle'];
+        return "Showing product with ID: $id<br>";
     }
 
-    public function index(): mixed
+    public function index(): string
     {
-        return [
-            (object)['id' => 1, 'name' => 'Circle A'],
-            (object)['id' => 2, 'name' => 'Circle B']
-        ];
+        return "Listing all products<br>";
     }
 
-    public function create(): mixed
+    public function create(): string
     {
-        return (object)['form' => 'create_circle_form'];
+        return "Creating a new product<br>";
     }
 
-    public function store(array $product): mixed
+    public function store(array $product): string
     {
-        return (object)['message' => 'Circle stored', 'product' => $product];
+        return "Storing product: " . json_encode($product) . "<br>";
     }
 
-    public function edit(int $id): mixed
+    public function edit(int $id): string
     {
-        return (object)['id' => $id, 'name' => 'Editable Circle'];
+        return "Editing product with ID: $id<br>";
     }
 
-    public function update(int $id, array $product): mixed
+    public function update(int $id, array $product): string
     {
-        return (object)['message' => 'Circle updated', 'id' => $id, 'newData' => $product];
+        return "Updating product with ID: $id<br>";
     }
 
-    public function destroy(int $id): mixed
+    public function destroy(int $id): string
     {
-        return (object)['message' => 'Circle deleted', 'id' => $id];
+        return "Deleting product with ID: $id<br>";
     }
 
-    public function search(string $keyword): mixed
+    public function search(string $keyword): string
     {
         return "Searching for product with keyword: $keyword<br>";
     }
