@@ -106,7 +106,7 @@ abstract class Product implements ProductResource
      * @return mixed
      */
 
-    abstract public function store(): mixed;
+    abstract public function store(array $product): mixed;
 
     /**
      * 展示编辑产品的表单页面 方法名：edit
@@ -183,13 +183,18 @@ class ElectronicsProduct extends Product
     {
         return (object)['message' => 'Circle deleted', 'id' => $id];
     }
+
+    public function search(string $keyword): mixed
+    {
+        return "Searching for product with keyword: $keyword<br>";
+    }
 }
 
 // 接口不能被直接实例化；接口不能 new（因为没有方法体）
 // 抽象类不能实例化；抽象类也不能 new（因为至少有一个未实现方法）
 // $productResource = new ProductResource();
 
-$product = new Product();
+$product = new ElectronicsProduct("Sample Product");
 $productInfo = $product->show(1);
 echoWithBr($productInfo);
 
@@ -327,6 +332,65 @@ class Post extends Controller
 $post = new Post();
 echoWithBr($post->getShare());
 echoWithBr($post->show());
+
+// 使用多个 Trait 与冲突解决
+trait A
+{
+    public function commonMethod()
+    {
+        echo "Method from A\n";
+    }
+
+    public function method1() 
+    {
+        echo "C::method1\n"; 
+    }
+
+    protected function method2()
+    {
+        echo "C::method2 (protected)\n";
+    }
+}
+
+trait B
+{
+    public function commonMethod()
+    {
+        echo "Method from B\n";
+    }
+
+    public function method1()
+    {
+        echo "D::method1\n";
+    }
+}
+
+class MyClass {
+    use A, B
+    {
+        // 当调用 commonMethod 时，使用 Trait A 的版本，忽略 Trait B 的
+        A::commonMethod insteadof B;
+
+        // 解决不同 trait 中命名的冲突
+        A::method1 insteadOf B;
+        B::method1 as bMethod1; // 将 B 的 method1 重命名为 bMethod1
+
+        // 把 method2 的可见性为 public
+        // A::method2 as public;
+        
+        // 重命名 + 修改可见性
+        A::method2 as public aMethod2;
+    }
+
+}
+
+echoHr();
+$object1 = new MyClass();
+$object1->commonMethod(); // 输出: Method from A
+$object2 = new MyClass();
+$object2->method1(); // 输出: A::method1
+$object2->bMethod1(); // 输出: B::method1
+$object2->amethod2(); // 输出: A::method2 (protected) (现在可以从外部调用了)
 
 // 一些魔术方法
 class TestMagic
