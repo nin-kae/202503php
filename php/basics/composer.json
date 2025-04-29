@@ -1,0 +1,18 @@
+{
+    "name": "bou_harumi/basics",
+    "require-dev": {
+        "nesbot/carbon": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "BouHarumi\\Basics\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nin-kae",
+            "email": "renhuaying0401@gmail.com"
+        }
+    ],
+    "require": {}
+}
