@@ -14,5 +14,7 @@
             "email": "renhuaying0401@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "alrik11es/cowsayphp": "^1.2"
+    }
 }
