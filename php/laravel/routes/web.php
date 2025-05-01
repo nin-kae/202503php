@@ -32,3 +32,9 @@ Route::get('/users/{id?}', [UsersController::class, 'show'])->whereNumber('id')-
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+// 测试发送出去的邮件都路由，不用的话会报错 404
+//Route::get('/test-email', function () {
+//    $user = \App\Models\User::first();
+//    return new \App\Mail\WelcomeUserMail($user);
+//});
