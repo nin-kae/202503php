@@ -96,7 +96,7 @@
 
                 {{-- Submit Button --}}
                 <div class="mt-6">
-                    <button type="submit" class="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold text-white bg-gradient-to-r from-pink-300 to-pink-400 hover:from-pink-400 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-400 disabled:opacity-50 transition ease-in-out duration-150">
+                    <button type="submit" class="w-full  items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 transition ease-in-out duration-150">
                         {{ __('Register') }}
                     </button>
                 </div>
