@@ -1,103 +1,93 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户详情</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f6d365, #fda085);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            padding: 40px;
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
         }
 
-        .container {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            padding: 40px;
-            max-width: 480px;
-            width: 90%;
-            color: #ffffff;
+        header {
+            margin-bottom: 40px;
             text-align: center;
         }
 
-        h1 {
+        header h1 {
             font-size: 28px;
             font-weight: 600;
-            margin-bottom: 30px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            color: #1f2937;
         }
 
-        .info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 10px;
-            text-align: left;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        .profile-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 0;
         }
 
         .label {
-            font-size: 18px;
             font-weight: 600;
-            color: #f0f0f0;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            color: #374151;
+            width: 30%;
         }
 
         .value {
-            font-size: 18px;
-            font-weight: 500;
-            color: #ffffff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+            color: #111827;
             text-align: right;
+            width: 70%;
         }
 
-        .button {
-            margin-top: 30px;
+        .back-link {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: rgba(255, 255, 255, 0.25);
-            border: 1px solid #ffffff;
-            border-radius: 50px;
+            margin-top: 40px;
+            font-size: 15px;
+            color: #2563eb;
             text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+            font-weight: 500;
         }
 
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            color: #333;
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-<div class="container">
+
+<header>
     <h1>User Information</h1>
+</header>
 
-    <div class="info">
-        <div class="label">Name: </div>
+<section class="profile-section">
+    <div class="info-row">
+        <div class="label">Name</div>
         <div class="value">{{ $user->name }}</div>
+    </div>
 
-        <div class="label">Email: </div>
+    <div class="info-row">
+        <div class="label">Email</div>
         <div class="value">{{ $user->email }}</div>
+    </div>
 
-        <div class="label">Registered: </div>
+    <div class="info-row">
+        <div class="label">Registered</div>
         <div class="value">{{ $user->created_at->format('Y-m-d H:i') }}</div>
     </div>
 
-    <a href="/" class="button">Back to Home</a>
-</div>
+    <a href="{{ url('/') }}" class="back-link">← Back to Home</a>
+</section>
+
 </body>
 </html>
+
