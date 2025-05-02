@@ -10,7 +10,7 @@
             padding: 0;
             height: 100vh;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            background: linear-gradient(135deg, #f6d365, #fda085);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,68 +18,65 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
             padding: 40px;
+            max-width: 480px;
             width: 90%;
-            max-width: 500px;
             color: #ffffff;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         h1 {
-            margin-bottom: 20px;
             font-size: 28px;
             font-weight: 600;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-        }
-
-        .info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 18px;
-        }
-
-        .label {
-            font-size: 25px;
-            font-weight: 600;
-            color: #e0e0e0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .value {
-            font-size: 20px;
-            font-weight: 500;
-            color: #ffffff;
+            margin-bottom: 30px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
-        a.button {
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 10px;
+            text-align: left;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .value {
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+            text-align: right;
+        }
+
+        .button {
             margin-top: 30px;
             display: inline-block;
             padding: 12px 30px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.25);
+            border: 1px solid #ffffff;
+            border-radius: 50px;
             text-decoration: none;
-            border: 1px solid #fff;
-            border-radius: 30px;
+            color: #fff;
+            font-weight: 600;
             transition: all 0.3s ease;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
         }
 
-        a.button:hover {
+        .button:hover {
             background-color: rgba(255, 255, 255, 0.4);
             color: #333;
         }
@@ -90,23 +87,17 @@
     <h1>User Information</h1>
 
     <div class="info">
-        <div class="info-row">
-            <span class="label">Name:</span>
-            <span class="value">{{ $user->name }}</span>
-        </div>
-        <div class="info-row">
-            <span class="label">Email:</span>
-            <span class="value">{{ $user->email }}</span>
-        </div>
-        <div class="info-row">
-            <span class="label">Registered:</span>
-            <span class="value">{{ $user->created_at->format('Y-m-d H:i') }}</span>
-        </div>
+        <div class="label">Name: </div>
+        <div class="value">{{ $user->name }}</div>
+
+        <div class="label">Email: </div>
+        <div class="value">{{ $user->email }}</div>
+
+        <div class="label">Registered: </div>
+        <div class="value">{{ $user->created_at->format('Y-m-d H:i') }}</div>
     </div>
 
     <a href="/" class="button">Back to Home</a>
 </div>
 </body>
 </html>
-
-
