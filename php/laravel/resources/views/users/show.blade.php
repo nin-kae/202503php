@@ -2,92 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile</title>
+    <title>User Info</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 40px;
+            padding: 60px 20px;
+            background-color: #f7f7f8;
             font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            color: #111827;
-        }
-
-        header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 28px;
-            font-weight: 600;
             color: #1f2937;
         }
 
-        .profile-section {
-            max-width: 700px;
+        .wrapper {
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #111827;
+            letter-spacing: -0.5px;
         }
 
         .info-row {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #e5e7eb;
             padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .label {
-            font-weight: 600;
-            color: #374151;
-            width: 30%;
-        }
-
-        .value {
-            color: #111827;
-            text-align: right;
-            width: 70%;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 40px;
-            font-size: 15px;
-            color: #2563eb;
-            text-decoration: none;
+            color: #6b7280;
             font-weight: 500;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .value {
+            font-weight: 500;
+            color: #374151;
         }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 24px;
+            background-color: #6b7280; /* slate-500 */
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #4b5563; /* slate-600 */
+        }
+
     </style>
 </head>
 <body>
-
-<header>
+<div class="wrapper">
     <h1>User Information</h1>
-</header>
-
-<section class="profile-section">
-    <div class="info-row">
-        <div class="label">Name</div>
-        <div class="value">{{ $user->name }}</div>
-    </div>
 
     <div class="info-row">
-        <div class="label">Email</div>
-        <div class="value">{{ $user->email }}</div>
+        <span class="label">Name</span>
+        <span class="value">{{ $user->name }}</span>
     </div>
-
     <div class="info-row">
-        <div class="label">Registered</div>
-        <div class="value">{{ $user->created_at->format('Y-m-d H:i') }}</div>
+        <span class="label">Email</span>
+        <span class="value">{{ $user->email }}</span>
+    </div>
+    <div class="info-row">
+        <span class="label">Registered</span>
+        <span class="value">{{ $user->created_at->format('Y-m-d H:i') }}</span>
     </div>
 
-    <a href="{{ url('/') }}" class="back-link">← Back to Home</a>
-</section>
-
+    <a href="/" class="back-button">← Back to Home</a>
+</div>
 </body>
 </html>
-

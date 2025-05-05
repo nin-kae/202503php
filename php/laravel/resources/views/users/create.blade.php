@@ -2,19 +2,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col items-center min-h-[calc(100vh-15rem)] sm:justify-center pt-6 sm:pt-0">
+    <div class="flex justify-center items-center min-h-[calc(100vh-10rem)]">
+        {{-- 整个注册框 --}}
+        <div class="glass-container p-8 rounded-lg w-full max-w-lg mx-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Create Your Account</h2>
 
-        {{-- Registration Form Card --}}
-        <div class="w-full sm:max-w-lg mt-6 px-8 py-10 linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff) dark:bg-gray-800 overflow-hidden sm:rounded-lg">
-
-            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">
-                {{ __('Create Your Account') }}
-            </h2>
-
-            {{-- Display General Validation Errors --}}
+            {{-- 验证错误 --}}
             @if ($errors->any())
-                <div class="mb-4 font-medium text-sm text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900 border border-red-300 dark:border-red-700 p-3 rounded" role="alert">
-                    {{-- <p class="font-bold">{{ __('Whoops! Something went wrong.') }}</p> --}}
+                <div class="mb-4 px-4 py-2 bg-red-50 border border-red-200 text-red-800 rounded">
                     <ul class="list-disc list-inside text-sm">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -23,94 +18,113 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('register.store') }}">
+            <form method="POST" action="{{ route('register.store') }}" class="space-y-5">
                 @csrf
 
-                <div class="mb-5">
-                    <label for="name" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Full Name') }} <span class="text-red-500">*</span>
+                {{-- Full Name --}}
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                        Full Name <span class="text-red-500">*</span>
                     </label>
-                    <input id="name"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('name') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="text"
-                           name="name"
-                           value="{{ old('name') }}"
-                           required
-                           autofocus
-                           autocomplete="name"
-                           placeholder="Enter your full name" />
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value="{{ old('name') }}"
+                        required
+                        autofocus
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="Enter your full name"
+                    >
                     @error('name')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="mb-5">
-                    <label for="email" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Email Address') }} <span class="text-red-500">*</span>
+                {{-- Email Address --}}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address <span class="text-red-500">*</span>
                     </label>
-                    <input id="email"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('email') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="email"
-                           name="email"
-                           value="{{ old('email') }}"
-                           required
-                           autocomplete="email"
-                           placeholder="you@example.com" />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value="{{ old('email') }}"
+                        required
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="you@example.com"
+                    >
                     @error('email')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="mb-5">
-                    <label for="password" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Password') }} <span class="text-red-500">*</span>
+                {{-- Password --}}
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+                        Password <span class="text-red-500">*</span>
                     </label>
-                    <input id="password"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('password') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="password"
-                           name="password"
-                           required
-                           autocomplete="new-password"
-                           placeholder="Choose a strong password" />
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        required
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="Choose a strong password"
+                    >
                     @error('password')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
-                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Minimum 8 characters recommended.</p>
+                    <p class="mt-1 text-xs text-gray-500">Minimum 8 characters recommended.</p>
                 </div>
 
-                <div class="mb-6">
-                    <label for="password_confirmation" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Confirm Password') }} <span class="text-red-500">*</span>
+                {{-- Confirm Password --}}
+                <div>
+                    <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">
+                        Confirm Password <span class="text-red-500">*</span>
                     </label>
-                    <input id="password_confirmation"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('password_confirmation') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="password"
-                           name="password_confirmation"
-                           required
-                           autocomplete="new-password"
-                           placeholder="Enter the password again" />
+                    <input
+                        id="password_confirmation"
+                        name="password_confirmation"
+                        type="password"
+                        required
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="Enter the password again"
+                    >
                     @error('password_confirmation')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 {{-- Submit Button --}}
-                <div class="mt-6">
-                    <button type="submit" class="w-full  items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 transition ease-in-out duration-150">
-                        {{ __('Register') }}
+                <div>
+                    <button
+                        type="submit"
+                        class="w-full py-2 rounded-md bg-slate-600 text-white font-medium
+                           hover:bg-slate-700 transition-colors"
+                    >
+                        Register
                     </button>
                 </div>
-
-                {{-- Link to Login Page --}}
-                <div class="text-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('Already have an account?') }}
-                        <a href="{{ route('login') }}" class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">
-                            {{ __('Log in here') }}
-                        </a>
-                    </p>
-                </div>
             </form>
+
+            {{-- 已有账号 链接 --}}
+            <p class="mt-6 text-center text-sm text-gray-600">
+                Already have an account?
+                <a href="{{ route('login') }}" class="text-slate-600 font-medium hover:underline">
+                    Log in here
+                </a>
+            </p>
         </div>
     </div>
 @endsection
+

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriesController;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -38,3 +40,6 @@ Route::get('/dashboard', function () {
 //    $user = \App\Models\User::first();
 //    return new \App\Mail\WelcomeUserMail($user);
 //});
+
+Route::resource('categories', CategoriesController::class);
+Route::resource('products', ProductsController::class);

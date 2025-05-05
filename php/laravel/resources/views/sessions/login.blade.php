@@ -1,27 +1,22 @@
-{{-- 文件路径: resources/views/auth/login.blade.php --}}
+{{-- resources/views/auth/login.blade.php --}}
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col items-center min-h-[calc(100vh-15rem)] sm:justify-center pt-6 sm:pt-0">
+    <div class="flex justify-center items-center min-h-[calc(100vh-10rem)]">
+        {{-- 整个登录框 --}}
+        <div class="glass-container p-8 rounded-lg w-full max-w-md mx-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Login to Your Account</h2>
 
-        {{-- Login Form Card --}}
-        <div class="w-full sm:max-w-md mt-6 px-8 py-10 linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff) dark:bg-gray-800 overflow-hidden sm:rounded-lg">
-
-            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">
-                {{ __('Login to your Account') }}
-            </h2>
-
-            {{-- Session Status Messages --}}
+            {{-- 状态消息 --}}
             @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900 border border-green-300 dark:border-green-700 p-3 rounded">
+                <div class="mb-4 px-4 py-2 bg-green-50 border border-green-200 text-green-800 rounded">
                     {{ session('status') }}
                 </div>
             @endif
 
-            {{-- Display General Validation Errors --}}
-            @if ($errors->any() && !$errors->has('email') && !$errors->has('password'))
-                <div class="mb-4 font-medium text-sm text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900 border border-red-300 dark:border-red-700 p-3 rounded" role="alert">
-                    <ul>
+            @if ($errors->any())
+                <div class="mb-4 px-4 py-2 bg-red-50 border border-red-200 text-red-800 rounded">
+                    <ul class="list-disc list-inside text-sm">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -29,75 +24,79 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login.store') }}">
+            <form method="POST" action="{{ route('login.store') }}" class="space-y-5">
                 @csrf
 
-                <div class="mb-5"> {{-- Increased margin bottom --}}
-                    <label for="email" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Email Address') }} <span class="text-red-500">*</span>
+                {{-- Email --}}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address <span class="text-red-500">*</span>
                     </label>
-                    <input id="email"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('email') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="email"
-                           name="email"
-                           value="{{ old('email') }}"
-                           required
-                           autofocus
-                           autocomplete="username"
-                           placeholder="you@example.com" />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="you@example.com"
+                    >
                     @error('email')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="mb-4">
-                    <label for="password" class="block font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">
-                        {{ __('Password') }} <span class="text-red-500">*</span>
+                {{-- Password --}}
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+                        Password <span class="text-red-500">*</span>
                     </label>
-                    <input id="password"
-                           class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-white dark:text-gray-900 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-1 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md placeholder-gray-400 @error('password') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-                           type="password"
-                           name="password"
-                           required
-                           autocomplete="current-password"
-                           placeholder="Enter your password" />
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        required
+                        class="block w-full bg-white border border-gray-300 rounded-md px-3 py-2
+                           text-gray-800 placeholder-gray-400 focus:outline-none
+                           focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+                        placeholder="••••••••"
+                    >
                     @error('password')
-                    <p class="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">{{ $message }}</p>
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="flex items-center justify-between mt-4 mb-6 text-sm">
-                    <label for="remember_me" class="flex items-center">
-                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-offset-gray-800" name="remember">
-                        <span class="ml-2 text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                {{-- Remember --}}
+                <div class="flex items-center">
+                    <input id="remember" name="remember" type="checkbox"
+                           class="h-4 w-4 text-slate-600 border-gray-300 rounded focus:ring-slate-400">
+                    <label for="remember" class="ml-2 block text-sm text-gray-700">
+                        Remember me
                     </label>
-
-                    {{-- Optional: Forgot Password Link --}}
-                    {{-- @if (Route::has('password.request'))
-                        <a class="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
-                        </a>
-                    @endif --}}
                 </div>
 
-
-                {{-- Submit Button --}}
-                <div class="mt-6">
-                    <button type="submit" class="w-full  items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 transition ease-in-out duration-150">
-                        {{ __('Log in') }}
+                {{-- Submit --}}
+                <div>
+                    <button
+                        type="submit"
+                        class="w-full py-2 rounded-md bg-slate-600 text-white font-medium
+                           hover:bg-slate-700 transition-colors"
+                    >
+                        Log In
                     </button>
                 </div>
-
-                {{-- Link to Register Page --}}
-                <div class="text-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ __("Don't have an account?") }}
-                        <a href="{{ route('register') }}" class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">
-                            {{ __('Sign up here') }}
-                        </a>
-                    </p>
-                </div>
             </form>
+
+            {{-- 注册 链接 --}}
+            <p class="mt-6 text-center text-sm text-gray-600">
+                Don’t have an account?
+                <a href="{{ route('register') }}" class="text-slate-600 font-medium hover:underline">
+                    Sign up here
+                </a>
+            </p>
         </div>
     </div>
 @endsection

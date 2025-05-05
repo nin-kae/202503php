@@ -6,99 +6,100 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 
     <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: #f5f7fa;
-            color: #1f2937;
-        }
-
-        .glass-container {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        }
-
-        nav.glass-container {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        nav a, nav span, nav button {
-            color: #374151;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #1d4ed8;
-        }
-
-        .btn-logout {
-            color: #1f2937;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .btn-logout:hover {
-            color: #dc2626;
-        }
-
-        footer {
-            background: #ffffff;
-            border-top: 1px solid #e5e7eb;
+        nav, .content-glass, footer {
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
-<div class="min-h-screen flex flex-col">
-    {{-- Header --}}
-    <nav class="glass-container px-4 sm:px-6 lg:px-8 py-3 shadow-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="{{ route('home') }}" class="text-xl font-semibold">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <div class="space-x-4">
+<div class="min-h-screen flex flex-col pt-20 pb-12"> {{-- pt-20 = 80px, pb-12 = 48px --}}
+
+    {{-- 固定头部 --}}
+    <nav class="fixed top-0 inset-x-0 z-50 bg-white/30 dark:bg-gray-800/30 border-b border-gray-200 dark:border-gray-700 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <div class="hidden sm:flex space-x-4">
+                    <a href="{{ route('home') }}"
+                       class="px-1 pt-1 border-b-2 {{ request()->routeIs('home') ? 'border-indigo-400 text-gray-900 dark:text-gray-100' : 'border-transparent text-gray-500 dark:text-gray-400' }} hover:text-gray-700 dark:hover:text-gray-300 transition">
+                        {{ __('Home') }}
+                    </a>
+                    <a href="{{ route('products.index') }}"
+                       class="px-1 pt-1 border-b-2 {{ request()->routeIs('products.index') ? 'border-indigo-400 text-gray-900 dark:text-gray-100' : 'border-transparent text-gray-500 dark:text-gray-400' }} hover:text-gray-700 dark:hover:text-gray-300 transition">
+                        {{ __('Products') }}
+                    </a>
+                    <a href="{{ route('categories.index') }}"
+                       class="px-1 pt-1 border-b-2 {{ request()->routeIs('categories.index') ? 'border-indigo-400 text-gray-900 dark:text-gray-100' : 'border-transparent text-gray-500 dark:text-gray-400' }} hover:text-gray-700 dark:hover:text-gray-300 transition">
+                        {{ __('Categories') }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden sm:flex items-center space-x-4">
                 @guest
-                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('login') }}" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                        {{ __('Login') }}
+                    </a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                            {{ __('Register') }}
+                        </a>
                     @endif
                 @else
-                    <a href="{{ route('users.show', ['id' => Auth::id()]) }}">
-                        {{ Auth::user()->name }}
-                    </a>
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ Auth::user()->name }}</span>
+                    <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="btn-logout">Log Out</button>
+                        <button type="submit"
+                                class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                            {{ __('Log Out') }}
+                        </button>
                     </form>
                 @endguest
+            </div>
+
+            <div class="-mr-2 flex sm:hidden">
+                <button class="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    {{-- Content --}}
-    <main class="flex-grow py-10">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="glass-container p-8">
-                @yield('content')
+    {{-- 主内容 --}}
+    <main class="flex-grow bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="content-glass bg-white/60 dark:bg-gray-800/30 rounded-lg overflow-hidden my-8">
+                <div class="p-6">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </main>
 
-    {{-- Footer --}}
-    <footer class="text-center py-4 text-sm text-gray-500">
-        &copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. All rights reserved.
+    {{-- 页脚 --}}
+    <footer class="bg-white/50 dark:bg-gray-800/50 backdrop-blur border-t border-gray-200 dark:border-gray-700 mt-8">
+        <div class="max-w-7xl mx-auto px-4 py-4 text-center text-sm text-gray-700 dark:text-gray-300">
+            &copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. All rights reserved.
+        </div>
     </footer>
+
 </div>
 
 @stack('scripts')
 </body>
 </html>
+
