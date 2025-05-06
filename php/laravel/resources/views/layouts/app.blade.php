@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Laravel'))</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
@@ -79,6 +79,14 @@
         </div>
     </nav>
 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4">
+        {{-- Flash messages --}}
+        @if(session()->has('success') || session()->has('error') || session()->has('info') || session()->has('warning'))
+            @include('layouts._flash_message')
+        @endif
+
+
+        {{-- Add other flash message types like warning or info if needed --}}
     {{-- 主内容 --}}
     <main class="flex-grow bg-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
