@@ -14,13 +14,14 @@ class CategoriesController extends Controller
      * Display a listing of the resource.
      */
 
-    protected int $perPage = 10;
+    protected int $perPage = 15;
     public function index(): Factory|Application|View
     {
         // $categories 是一个集合，包含了所有的分类
         // SELECT * FROM categories;
 
-        $categories = Categories::paginate($this->perPage);
+//        $categories = Categories::paginate($this->perPage);
+        $categories = Categories::orderBy('name')->paginate($this->perPage);
         return view('categories.index', compact('categories'));
     }
 
