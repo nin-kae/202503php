@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Models\User;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -32,7 +33,12 @@ Route::get('/users/{id?}', [UsersController::class, 'show'])->whereNumber('id')-
 
 // Dashboard (登录成功跳转页)
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    // 假设要把所有激活用户都列出来
+    $users = User::where('active', 1)
+        ->orderBy('name')
+        ->get();
+
+    return view('dashboard', compact('users'));
 });
 
 // 测试发送出去的邮件都路由，不用的话会报错 404

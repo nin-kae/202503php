@@ -8,6 +8,7 @@ use App\Models\Products;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Application;
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -31,11 +32,18 @@ class TestController extends Controller
         return view('test.index', compact('data', 'categories', 'author', 'html'));
 
         // 查询构建器
-        $categories = \DB::table('categories') // 指定查询('categories')
-             ->select('id', 'name')
-             ->where('name', 'like', 'c%')
-             ->orderBy('id', 'desc')
-             ->paginate($this->perPage);
+//        $categories = \DB::table('categories') // 指定查询('categories')
+//             ->select('id', 'name')
+//             ->where('name', 'like', 'c%')
+//             ->orderBy('id', 'desc')
+//             ->paginate($this->perPage);
+        $query = DB::table('users');
+        $users = $query
+            ->where('active', 1)
+            ->orderBy('name')
+            ->get();
+
+        return view('users.dashboard', compact('users'));
 
         // order 表中有一个 status 字段用来标识订单的状态, 1 已下单, 2 已支付, 3 已发货, 4 已完成, 5 已取消
         // ->whereIn('status', [2, 3, 4])
