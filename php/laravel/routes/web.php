@@ -4,8 +4,11 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
+use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
 //Route::get('/', function () {
@@ -51,3 +54,12 @@ Route::resource('categories', CategoriesController::class);
 Route::resource('products', ProductsController::class);
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
+
+// 2025/05/07
+// author 资源路由
+Route::resource('authors', AuthorController::class);
+// post 资源路由
+Route::resource('posts', PostController::class);
+// tag 资源路由
+Route::resource('tags', SessionsController::class);
+
