@@ -27,6 +27,7 @@ class PostFactory extends Factory
             // 如果数据库已有数据
             // Or Author::inRandomOrder()->first()->id if authors are already seeded
             'author_id' => Author::factory(),
+            'slug' => Str::slug($title) . '-' . uniqid(), // Ensure uniqueness
             'status' => $this->faker->randomElement([0, 1, 2]), // 0:草稿 1:發佈 2:隱藏
         ];
     }

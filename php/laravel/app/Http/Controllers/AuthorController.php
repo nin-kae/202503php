@@ -18,7 +18,7 @@ class AuthorController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        $authors = Author::with('post')->paginate($this->perPage);
+        $authors = Author::with('posts')->paginate($this->perPage);
         return view('authors.index', compact('authors'));
     }
 
