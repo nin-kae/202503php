@@ -61,5 +61,5 @@ Route::resource('authors', AuthorController::class);
 // post 资源路由
 Route::resource('posts', PostController::class);
 // tag 资源路由
-Route::resource('tags', SessionsController::class);
+Route::resource('tags', TagController::class);
 

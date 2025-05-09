@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
+    protected int $perPage = 10;
     /**
      * Display a listing of the resource.
      */
@@ -36,7 +37,7 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tag $tag)
+    public function show(Tag $tag): View
     {
         return view('tags.show', ['tag' => $tag]);
     }

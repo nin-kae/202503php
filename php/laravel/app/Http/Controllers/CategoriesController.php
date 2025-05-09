@@ -21,7 +21,7 @@ class CategoriesController extends Controller
         // SELECT * FROM categories;
 
 //        $categories = Categories::paginate($this->perPage);
-        $categories = Categories::orderBy('name')->paginate($this->perPage);
+        $categories = Categories::paginate($this->perPage);
         return view('categories.index', compact('categories'));
     }
 
